@@ -125,9 +125,10 @@ const SPFooter = () => {
                         <li><Link to="/collections/skincare" className="hover:text-white transition-colors">Face & Skincare</Link></li>
                         <li><Link to="/collections/body" className="hover:text-white transition-colors">Botanical Body Wash</Link></li>
                         <li><Link to="/collections/haircare" className="hover:text-white transition-colors">Pure Haircare</Link></li>
+                        <li><Link to="/collections/aromatherapy" className="hover:text-white transition-colors">Aromatherapy Living</Link></li>
+                        <li><Link to="/collections/tools" className="hover:text-white transition-colors">Ritual Tools & Gua Sha</Link></li>
                         <li><Link to="/collections/gift-sets" className="hover:text-white transition-colors">Luxury Gift Boxes</Link></li>
                         <li><Link to="/under20" className="hover:text-white transition-colors">Under $20 Essentials</Link></li>
-                        <li><Link to="/under40" className="hover:text-white transition-colors">Under $40 Bundles</Link></li>
                     </ul>
                 </div>
 
@@ -136,22 +137,27 @@ const SPFooter = () => {
                     <h4 className="text-white font-serif text-base mb-4 tracking-wider uppercase">The Brand</h4>
                     <ul className="space-y-2 text-[#a8beae] text-xs">
                         <li><Link to="/about" className="hover:text-white transition-colors">Our Philosophy & Story</Link></li>
+                        <li><Link to="/ingredients" className="hover:text-white transition-colors">Botanical Glossary (A–Z)</Link></li>
+                        <li><Link to="/locations" className="hover:text-white transition-colors">Boutique Ateliers</Link></li>
                         <li><Link to="/journal" className="hover:text-white transition-colors">Wellness Journal</Link></li>
                         <li><Link to="/sustainability" className="hover:text-white transition-colors">Sustainability Pledge</Link></li>
                         <li><Link to="/reviews" className="hover:text-white transition-colors">Verified Reviews</Link></li>
-                        <li><Link to="/wishlist" className="hover:text-white transition-colors">My Wishlist</Link></li>
+                        <li><Link to="/press" className="hover:text-white transition-colors">Press & Editorial</Link></li>
+                        <li><Link to="/careers" className="hover:text-white transition-colors">Atelier Careers</Link></li>
                     </ul>
                 </div>
 
-                {/* Column 4: Client Services */}
+                {/* Column 4: Client Services & Rituals */}
                 <div>
                     <h4 className="text-white font-serif text-base mb-4 tracking-wider uppercase">Client Care</h4>
                     <ul className="space-y-2 text-[#a8beae] text-xs">
+                        <li><Link to="/quiz" className="hover:text-[#a3c9a8] font-semibold transition-colors">Routine Finder Quiz (15% Off)</Link></li>
+                        <li><Link to="/rewards" className="hover:text-[#a3c9a8] font-semibold transition-colors">VIP Botanical Circle Rewards</Link></li>
+                        <li><Link to="/gift-cards" className="hover:text-white transition-colors">Digital Gift Cards</Link></li>
                         <li><Link to="/track-order" className="hover:text-white transition-colors">Live Order Tracker</Link></li>
                         <li><Link to="/faq" className="hover:text-white transition-colors">Help Center & FAQ</Link></li>
+                        <li><Link to="/shipping-policy" className="hover:text-white transition-colors">Shipping & Returns</Link></li>
                         <li><Link to="/contact" className="hover:text-white transition-colors">Contact Concierge</Link></li>
-                        <li><Link to="/cart" className="hover:text-white transition-colors">Shopping Bag</Link></li>
-                        <li><Link to="/checkout" className="hover:text-white transition-colors">Express Checkout</Link></li>
                     </ul>
                 </div>
             </div>
@@ -168,8 +174,9 @@ const SPFooter = () => {
 
                 <div className="flex items-center gap-6">
                     <span className="text-[11px] text-[#7d9583]">ahsansheikhoffice@gmail.com</span>
-                    <Link to="/faq" className="hover:underline">Privacy Policy</Link>
-                    <Link to="/faq" className="hover:underline">Terms of Service</Link>
+                    <Link to="/shipping-policy" className="hover:underline">Shipping Policy</Link>
+                    <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
+                    <Link to="/terms" className="hover:underline">Terms of Service</Link>
                 </div>
             </div>
         </footer>

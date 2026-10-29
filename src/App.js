@@ -41,6 +41,23 @@ import Under10 from './components/Under10';
 import ForHer from './components/ForHer';
 import ForHim from './components/ForHim';
 
+// Newly Integrated Brand, Ritual & Policy Pages
+import RoutineQuizPage from './components/RoutineQuizPage';
+import GiftCardsPage from './components/GiftCardsPage';
+import RewardsPage from './components/RewardsPage';
+import LocationsPage from './components/LocationsPage';
+import IngredientsPage from './components/IngredientsPage';
+import CareersPage from './components/CareersPage';
+import PressPage from './components/PressPage';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import TermsPage from './components/TermsPage';
+import ShippingPolicyPage from './components/ShippingPolicyPage';
+
+// Homepage Storytelling & Interactive Sections
+import PressMarquee from './components/PressMarquee';
+import RitualQuizBanner from './components/RitualQuizBanner';
+import ApothecaryCraftSection from './components/ApothecaryCraftSection';
+
 // Scroll to top helper on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -54,9 +71,12 @@ const ScrollToTop = () => {
 const HomeView = () => (
   <>
     <SimpleSlider />
+    <PressMarquee />
     <HeroSection />
     <BsText />
     <Products />
+    <RitualQuizBanner />
+    <ApothecaryCraftSection />
     <Ingridients />
     <JournalSection />
     <FollowONIG />
@@ -91,18 +111,32 @@ function App() {
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/wishlist" element={<WishlistPage />} />
 
-            {/* Editorial & Brand Story */}
+            {/* Interactive Rituals & Diagnostics */}
+            <Route path="/quiz" element={<RoutineQuizPage />} />
+            <Route path="/gift-cards" element={<GiftCardsPage />} />
+            <Route path="/rewards" element={<RewardsPage />} />
+            <Route path="/locations" element={<LocationsPage />} />
+            <Route path="/ingredients" element={<IngredientsPage />} />
+
+            {/* Editorial, Brand Story & Press */}
             <Route path="/about" element={<AboutPage />} />
             <Route path="/journal" element={<JournalHubPage />} />
             <Route path="/journal/april" element={<JournalPage />} />
             <Route path="/journal/:slug" element={<JournalPostPage />} />
             <Route path="/sustainability" element={<SustainabilityPage />} />
             <Route path="/reviews" element={<ReviewsPage />} />
+            <Route path="/press" element={<PressPage />} />
+            <Route path="/careers" element={<CareersPage />} />
 
             {/* Customer Care & Concierge */}
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/track-order" element={<OrderTrackingPage />} />
+
+            {/* Legal & Policies */}
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/shipping-policy" element={<ShippingPolicyPage />} />
 
             {/* Single Product Page */}
             <Route path="/:id" element={<SinglePage />} />

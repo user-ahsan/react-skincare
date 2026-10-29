@@ -19,6 +19,7 @@ const NavBar = () => {
     const [show, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
     const [show3, setShow3] = useState(false);
+    const [showExperiences, setShowExperiences] = useState(false);
     const [quickSearch, setQuickSearch] = useState("");
     const [searchOpen, setSearchOpen] = useState(false);
 
@@ -30,24 +31,35 @@ const NavBar = () => {
         setShow(true);
         setShow2(false);
         setShow3(false);
+        setShowExperiences(false);
     };
 
     const showHandler2 = () => {
         setShow2(true);
         setShow(false);
         setShow3(false);
+        setShowExperiences(false);
     };
 
     const showHandler3 = () => {
         setShow3(true);
         setShow(false);
         setShow2(false);
+        setShowExperiences(false);
+    };
+
+    const showExperiencesHandler = () => {
+        setShowExperiences(true);
+        setShow(false);
+        setShow2(false);
+        setShow3(false);
     };
 
     const dontShowHandler = () => {
         setShow(false);
         setShow2(false);
         setShow3(false);
+        setShowExperiences(false);
     };
 
     const handleSearchSubmit = (e) => {
@@ -73,6 +85,12 @@ const NavBar = () => {
                     <span className="hidden sm:inline bg-[#2b4c3e] px-2 py-0.5 rounded text-[10px] text-white">Use Code AHSAN20</span>
                 </div>
                 <div className="hidden lg:flex items-center gap-4 text-[10px]">
+                    <Link to="/quiz" className="hover:text-white transition-colors text-[#a3c9a8] font-bold">Ritual Quiz</Link>
+                    <span>•</span>
+                    <Link to="/rewards" className="hover:text-white transition-colors">Rewards Circle</Link>
+                    <span>•</span>
+                    <Link to="/locations" className="hover:text-white transition-colors">Boutiques</Link>
+                    <span>•</span>
                     <Link to="/track-order" className="hover:text-white transition-colors">Track Order</Link>
                     <span>•</span>
                     <Link to="/contact" className="hover:text-white transition-colors">Concierge</Link>
@@ -138,6 +156,55 @@ const NavBar = () => {
                     <Link to="/collections" className="hover:text-[#192b23] hover:underline underline-offset-8 transition-colors" onClick={dontShowHandler}>
                         COLLECTIONS
                     </Link>
+
+                    {/* Experiences & Services Mega Dropdown */}
+                    <div className="relative py-7 cursor-pointer" onMouseEnter={showExperiencesHandler}>
+                        <span className="hover:text-[#192b23] hover:underline underline-offset-8 transition-colors flex items-center gap-1">
+                            EXPERIENCES
+                            <span className="text-[9px]">▾</span>
+                        </span>
+                        {showExperiences && (
+                            <div className="absolute top-20 -left-12 w-80 bg-white rounded-2xl shadow-2xl p-5 border border-gray-100 z-50 animate-fadeIn" onMouseLeave={dontShowHandler}>
+                                <div className="space-y-3 text-left">
+                                    <Link to="/quiz" onClick={dontShowHandler} className="block p-3 rounded-xl hover:bg-[#f4f1ea] transition-all">
+                                        <div className="font-serif font-bold text-[#192b23] text-sm flex items-center justify-between">
+                                            <span>🌿 Diagnostic Routine Finder</span>
+                                            <span className="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-sans font-bold">15% OFF</span>
+                                        </div>
+                                        <p className="text-[11px] text-gray-500 mt-1 font-normal normal-case">Tailored 3-step botanical prescription for your skin type.</p>
+                                    </Link>
+
+                                    <Link to="/ingredients" onClick={dontShowHandler} className="block p-3 rounded-xl hover:bg-[#f4f1ea] transition-all">
+                                        <div className="font-serif font-bold text-[#192b23] text-sm">
+                                            🌸 Botanical Glossary
+                                        </div>
+                                        <p className="text-[11px] text-gray-500 mt-1 font-normal normal-case">A-Z transparency on cold-pressed active phytonutrients.</p>
+                                    </Link>
+
+                                    <Link to="/rewards" onClick={dontShowHandler} className="block p-3 rounded-xl hover:bg-[#f4f1ea] transition-all">
+                                        <div className="font-serif font-bold text-[#192b23] text-sm">
+                                            👑 The Botanical Circle
+                                        </div>
+                                        <p className="text-[11px] text-gray-500 mt-1 font-normal normal-case">VIP tiers, birthday gifts & loyalty points rewards.</p>
+                                    </Link>
+
+                                    <Link to="/gift-cards" onClick={dontShowHandler} className="block p-3 rounded-xl hover:bg-[#f4f1ea] transition-all">
+                                        <div className="font-serif font-bold text-[#192b23] text-sm">
+                                            🎁 Luxury Digital Gift Cards
+                                        </div>
+                                        <p className="text-[11px] text-gray-500 mt-1 font-normal normal-case">Curated amounts with personalized notes & instant delivery.</p>
+                                    </Link>
+
+                                    <Link to="/locations" onClick={dontShowHandler} className="block p-3 rounded-xl hover:bg-[#f4f1ea] transition-all border-t border-gray-100 pt-3">
+                                        <div className="font-serif font-bold text-[#192b23] text-sm">
+                                            📍 Boutique Ateliers
+                                        </div>
+                                        <p className="text-[11px] text-gray-500 mt-1 font-normal normal-case">Book a skin consultation in SoHo, Mayfair, Paris & Tokyo.</p>
+                                    </Link>
+                                </div>
+                            </div>
+                        )}
+                    </div>
 
                     <Link to="/journal" className="hover:text-[#192b23] hover:underline underline-offset-8 transition-colors" onClick={dontShowHandler}>
                         JOURNAL

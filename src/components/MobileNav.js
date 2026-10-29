@@ -97,12 +97,40 @@ const MobileNav = () => {
                             <span>GIFTS FOR HIM</span>
                             <span className="text-gray-400">→</span>
                         </Link>
+                        <Link to="/quiz" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between text-emerald-800 font-semibold">
+                            <span>🌿 ROUTINE FINDER QUIZ (15% OFF)</span>
+                            <span className="text-emerald-600">Start</span>
+                        </Link>
+                        <Link to="/rewards" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between">
+                            <span>👑 REWARDS CIRCLE (VIP TIERS)</span>
+                            <span className="text-gray-400">→</span>
+                        </Link>
+                        <Link to="/gift-cards" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between">
+                            <span>🎁 LUXURY DIGITAL GIFT CARDS</span>
+                            <span className="text-gray-400">→</span>
+                        </Link>
+                        <Link to="/ingredients" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between">
+                            <span>🌸 BOTANICAL GLOSSARY (A-Z)</span>
+                            <span className="text-gray-400">→</span>
+                        </Link>
+                        <Link to="/locations" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between">
+                            <span>📍 BOUTIQUE ATELIERS & VISITS</span>
+                            <span className="text-gray-400">→</span>
+                        </Link>
                         <Link to="/journal" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between">
                             <span>WELLNESS JOURNAL</span>
                             <span className="text-gray-400">→</span>
                         </Link>
                         <Link to="/about" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between">
                             <span>OUR STORY (AHSAN SHEIKH)</span>
+                            <span className="text-gray-400">→</span>
+                        </Link>
+                        <Link to="/press" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between">
+                            <span>EDITORIAL PRESS & REVIEWS</span>
+                            <span className="text-gray-400">→</span>
+                        </Link>
+                        <Link to="/careers" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between">
+                            <span>ATELIER CAREERS</span>
                             <span className="text-gray-400">→</span>
                         </Link>
                         <Link to="/track-order" onClick={closeDrawer} className="py-1 border-b border-gray-100 flex items-center justify-between">

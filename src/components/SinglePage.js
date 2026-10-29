@@ -44,7 +44,7 @@ const SinglePage = () => {
     const galleryImages = gallery && gallery.length > 0 ? gallery : [
         primaryImage,
         hoverImg || primaryImage,
-        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
     ];
 

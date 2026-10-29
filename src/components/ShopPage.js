@@ -28,10 +28,23 @@ const ShopPage = () => {
     const [selectedCategory, setSelectedCategory] = useState(initialCategory);
     const [searchQuery, setSearchQuery] = useState(initialSearch);
     const [sortBy, setSortBy] = useState('featured');
-    const [priceRange, setPriceRange] = useState(70);
+    const [priceRange, setPriceRange] = useState(200);
     const [addedId, setAddedId] = useState(null);
 
-    const categories = ['All', 'Skincare', 'Body Care', 'Haircare', 'Gift Sets', 'Wellness', 'Travel'];
+    const categories = [
+        'All',
+        'Skincare',
+        'Body Care',
+        'Haircare',
+        'Aromatherapy',
+        'Tools',
+        'Sun & Lip',
+        'Grooming',
+        'Bath & Body',
+        'Gift Sets',
+        'Wellness',
+        'Travel'
+    ];
 
     const filteredProducts = useMemo(() => {
         return store.filter((product) => {
@@ -168,7 +181,7 @@ const ShopPage = () => {
                         <input
                             type="range"
                             min="10"
-                            max="70"
+                            max="200"
                             value={priceRange}
                             onChange={(e) => setPriceRange(Number(e.target.value))}
                             className="accent-[#2b4c3e] cursor-pointer"

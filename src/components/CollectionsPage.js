@@ -19,14 +19,16 @@ import { FaShoppingBag, FaStar } from 'react-icons/fa';
 const collectionDefinitions = [
     {
         slug: "skincare",
+        tabName: "Skincare",
         title: "Facial Skincare & Elixirs",
         category: "Skincare",
         subtitle: "Pure Bio-Compatible Nutrition",
         description: "Cold-pressed rosehip seed oils, antioxidant mist toners, and detoxifying green clay masques designed to nourish the skin barrier without synthetic irritants.",
-        banner: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1600&q=80"
+        banner: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1600&q=80"
     },
     {
         slug: "body",
+        tabName: "Body Care",
         title: "Botanical Body Sanctuary",
         category: "Body Care",
         subtitle: "Velvet Cleansers & Exfoliants",
@@ -35,6 +37,7 @@ const collectionDefinitions = [
     },
     {
         slug: "haircare",
+        tabName: "Haircare",
         title: "Holistic Scalp & Hair Health",
         category: "Haircare",
         subtitle: "Follicular Vitality",
@@ -42,7 +45,53 @@ const collectionDefinitions = [
         banner: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=1600&q=80"
     },
     {
+        slug: "aromatherapy",
+        tabName: "Aromatherapy",
+        title: "Aromatherapy & Sensory Living",
+        category: "Aromatherapy",
+        subtitle: "Hand-Poured Resins & Candles",
+        description: "Wildcrafted botanical candles, cold ultrasonic diffusers, and soothing incense blended from sacred frankincense, hinoki wood, and sweet orange.",
+        banner: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+        slug: "tools",
+        tabName: "Ritual Tools",
+        title: "Botanical Ritual Tools & Stones",
+        category: "Tools",
+        subtitle: "Ancient Healing Implements",
+        description: "Carved Xiuyan jade rollers, scalloped bian stone Gua Sha, agave fiber dry brushes, and pure mulberry silk sleep masks crafted for lymphatic drainage.",
+        banner: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+        slug: "bath-body",
+        tabName: "Bath & Soak",
+        title: "Botanical Soak Sanctuary",
+        category: "Bath & Body",
+        subtitle: "Mineral Balneotherapy",
+        description: "Solar-evaporated Dead Sea salts, crushed Himalayan pink crystals, and organic coconut milk soaks designed to soothe sore muscles and calm restless spirits.",
+        banner: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+        slug: "grooming",
+        tabName: "Grooming",
+        title: "Botanical Grooming & Barber Tonic",
+        category: "Grooming",
+        subtitle: "Refined Botanical Rituals",
+        description: "Cold-pressed jojoba beard oils, organic witch hazel post-shave tonics, and clarifying bamboo charcoal shave bars formulated for balanced masculine grooming.",
+        banner: "https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+        slug: "sun-lip",
+        tabName: "Sun & Lip",
+        title: "Solar Shield & Lip Nectar",
+        category: "Sun & Lip",
+        subtitle: "Non-Nano Mineral Protection",
+        description: "Reef-safe non-nano zinc oxide SPF 50 shields, organic wild berry lip butters, and restorative cold-pressed after-sun botanical elixirs.",
+        banner: "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
         slug: "gift-sets",
+        tabName: "Gift Sets",
         title: "Curated Luxury Gift Boxes",
         category: "Gift Sets",
         subtitle: "Artisanal Elegance",
@@ -51,6 +100,7 @@ const collectionDefinitions = [
     },
     {
         slug: "wellness",
+        tabName: "Wellness",
         title: "Restorative Aromatherapy & Wellness",
         category: "Wellness",
         subtitle: "Mindful Inner Equilibrium",
@@ -123,7 +173,7 @@ const CollectionsPage = () => {
                                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
                             }`}
                         >
-                            {col.title.split(' ')[0]}
+                            {col.tabName || col.title.split(' ')[0]}
                         </Link>
                     ))}
                 </div>

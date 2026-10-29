@@ -16,4 +16,4 @@ window.matchMedia = window.matchMedia || function() {
     };
 };
 
-window.scrollTo = window.scrollTo || function() {};
+window.scrollTo = jest.fn();

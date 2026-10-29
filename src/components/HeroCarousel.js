@@ -20,7 +20,7 @@ const slides = [
     subtitle: "Cold-pressed certified organic skincare and wild-harvested restorative elixirs.",
     ctaText: "Shop Best Sellers",
     ctaLink: "/shop",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1920&q=85"
+    image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1920&q=85"
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const slides = [
     subtitle: "Zero artificial fragrances, parabens, sulfates, or micro-plastics.",
     ctaText: "Explore Skincare",
     ctaLink: "/collections/skincare",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=85"
+    image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1920&q=85"
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const slides = [
     subtitle: "French lavender crystals, organic coffee scrubs, and botanical scalp detoxifiers.",
     ctaText: "Discover Collections",
     ctaLink: "/collections",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1920&q=85"
+    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=85"
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const slides = [
     subtitle: "100% recyclable amber vessels & one tree planted for every ritual ordered.",
     ctaText: "Our Sustainability Story",
     ctaLink: "/sustainability",
-    image: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=1920&q=85"
+    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1920&q=85"
   }
 ];
 

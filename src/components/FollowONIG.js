@@ -13,7 +13,7 @@ import { FaInstagram } from "react-icons/fa";
 const communityImages = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80",
+    url: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80",
     tag: "@aurabotanics.by.ahsan"
   },
   {

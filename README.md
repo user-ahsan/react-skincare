@@ -96,7 +96,7 @@
 
 ## 📂 Project Structure
 
-```text
+```
 react-e-commerce/
 ├── public/
 │   ├── favicon.ico
