@@ -156,3 +156,4 @@ const JournalPostPage = () => {
 };
 
 export default JournalPostPage;
+

@@ -21,10 +21,10 @@ export const store = [
         volume: "150 ml / 5.1 fl oz",
         descr: "A gentle, antioxidant-rich foaming gel that melts away makeup and impurities without stripping vital moisture.",
         primaryImage: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=800&q=80",
+        hoverImg: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=800&q=80",
         gallery: [
             "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=1000&q=80",
             "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80"
         ],
         isBestSeller: true,
@@ -40,10 +40,10 @@ export const store = [
         reviewsCount: 428,
         volume: "120 ml / 4.0 fl oz",
         descr: "Infused with cold-pressed rosehip oil and aloe vera, delivering 24-hour deep hydration and radiant glow.",
-        primaryImage: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=1000&q=80",
             "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=80"
         ],
         isBestSeller: true,
@@ -82,7 +82,7 @@ export const store = [
         hoverImg: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
         gallery: [
             "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=1000&q=80"
+            "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=1000&q=80"
         ],
         isBestSeller: true,
         isFeatured: true
@@ -102,10 +102,10 @@ export const store = [
         volume: "3-Piece Luxury Set",
         descr: "The definitive gifting experience featuring full-size Rose Elixir, Velvet Mist Toner, and Silk Body Oil in an eco-luxe box.",
         primaryImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1512290900672-1f02e604f326?auto=format&fit=crop&w=800&q=80",
+        hoverImg: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80",
         gallery: [
             "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80",
-            "https://images.unsplash.com/photo-1512290900672-1f02e604f326?auto=format&fit=crop&w=1000&q=80"
+            "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=80"
         ],
         isFeatured: true
     },
@@ -135,10 +135,10 @@ export const store = [
         reviewsCount: 210,
         volume: "4-Piece Wellness Set",
         descr: "Curated bedtime ritual with soothing Lavender Pillow Mist, Body Butter, Night Recovery Elixir, and Organic Silk Sleep Mask.",
-        primaryImage: "https://images.unsplash.com/photo-1512290900672-1f02e604f326?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1512290900672-1f02e604f326?auto=format&fit=crop&w=1000&q=80"
+            "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=80"
         ]
     },
 
@@ -155,7 +155,7 @@ export const store = [
         reviewsCount: 168,
         volume: "250 ml / 8.5 fl oz",
         descr: "Finely ground Arabica coffee beans blended with sweet almond oil and sea salt to invigorate blood flow and smooth cellulite.",
-        primaryImage: "https://images.unsplash.com/photo-1567928805192-d35d641494b8?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -169,7 +169,7 @@ export const store = [
         volume: "500 ml / 16.9 fl oz",
         descr: "Sulfateless nourishing body wash infused with virgin coconut milk and golden jojoba oil for soft, silky clean skin.",
         primaryImage: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1567928805192-d35d641494b8?auto=format&fit=crop&w=800&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=800&q=80"
     },
     {
         id: "11",
@@ -198,7 +198,7 @@ export const store = [
         volume: "50 ml / 1.7 fl oz",
         descr: "TSA approved pocket size foaming cleanser for refreshed skin on the go.",
         primaryImage: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=600&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: "13",
@@ -221,7 +221,7 @@ export const store = [
         stars: 4,
         volume: "30 ml / 1.0 fl oz",
         descr: "Compact botanical moisture barrier repair cream for daily travel protection.",
-        primaryImage: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=600&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=600&q=80",
         hoverImg: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80"
     },
 
@@ -285,7 +285,7 @@ export const store = [
         type: "ourBestSellers",
         category: "Skincare",
         stars: 5,
-        primaryImage: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -305,7 +305,7 @@ export const store = [
         type: "ourBestSellers",
         category: "Wellness",
         stars: 5,
-        primaryImage: "https://images.unsplash.com/photo-1512290900672-1f02e604f326?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -356,7 +356,7 @@ export const store = [
         category: "Body Care",
         stars: 5,
         primaryImage: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1567928805192-d35d641494b8?auto=format&fit=crop&w=800&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=800&q=80"
     },
     {
         id: "29",
@@ -366,7 +366,7 @@ export const store = [
         category: "Body Care",
         stars: 5,
         primaryImage: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=800&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=800&q=80"
     },
     {
         id: "30",
@@ -405,7 +405,7 @@ export const store = [
     {
         id: "35",
         type: "iGPosts",
-        primaryImage: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=600&q=80"
+        primaryImage: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: "36",
@@ -415,7 +415,7 @@ export const store = [
     {
         id: "37",
         type: "iGPosts",
-        primaryImage: "https://images.unsplash.com/photo-1512290900672-1f02e604f326?auto=format&fit=crop&w=600&q=80"
+        primaryImage: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: "38",
@@ -425,7 +425,7 @@ export const store = [
     {
         id: "39",
         type: "iGPosts",
-        primaryImage: "https://images.unsplash.com/photo-1567928805192-d35d641494b8?auto=format&fit=crop&w=600&q=80"
+        primaryImage: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: "40",
@@ -455,7 +455,7 @@ export const store = [
         stars: 5,
         descr: "Invigorating citrus extract and organic verbena for an energizing morning shower experience.",
         primaryImage: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1567928805192-d35d641494b8?auto=format&fit=crop&w=800&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=800&q=80"
     },
     {
         id: "44",
@@ -476,7 +476,7 @@ export const store = [
         category: "Body Care",
         stars: 5,
         descr: "Ancient herbal formulation with turmeric, sandalwood, and sweet almond oil for velvety radiance.",
-        primaryImage: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -511,7 +511,7 @@ export const store = [
         category: "Body Care",
         stars: 5,
         descr: "Ultra-absorbent daily moisturizer providing silky 24-hour hydration with pure virgin coconut.",
-        primaryImage: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -523,7 +523,7 @@ export const store = [
         stars: 5,
         descr: "Enriched with organic lavender floral water and sweet almond oil to relax muscles and soothe skin.",
         primaryImage: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=800&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=800&q=80"
     },
     {
         id: "50",
@@ -545,7 +545,7 @@ export const store = [
         stars: 5,
         descr: "Dermatologist-tested hypoallergenic barrier repair lotion formulated for the most delicate skin.",
         primaryImage: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=800&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=800&q=80"
     },
 
     // BODY SCRUB
@@ -557,7 +557,7 @@ export const store = [
         category: "Body Care",
         stars: 5,
         descr: "Mineral-rich crystalline pink salt steeped in damask rose oil to gently buff away dead cells.",
-        primaryImage: "https://images.unsplash.com/photo-1567928805192-d35d641494b8?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -569,7 +569,7 @@ export const store = [
         stars: 5,
         descr: "Crushed English walnut shells combined with raw wild honey and shea butter for radiant touch.",
         primaryImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1567928805192-d35d641494b8?auto=format&fit=crop&w=800&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=800&q=80"
     },
     {
         id: "54",
@@ -580,7 +580,7 @@ export const store = [
         stars: 5,
         descr: "Ceremonial Japanese matcha powder paired with cane sugar and sweet almond oil to purify pores.",
         primaryImage: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1567928805192-d35d641494b8?auto=format&fit=crop&w=800&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=800&q=80"
     },
     {
         id: "55",
@@ -590,7 +590,7 @@ export const store = [
         category: "Body Care",
         stars: 5,
         descr: "Warm coconut oil and golden cane crystals melt on damp skin to reveal baby-soft smoothness.",
-        primaryImage: "https://images.unsplash.com/photo-1567928805192-d35d641494b8?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80"
     },
 
@@ -642,7 +642,7 @@ export const store = [
         stars: 5,
         volume: "15 ml / 0.5 fl oz",
         descr: "Infused with caffeine and hyaluronic acid to diminish puffiness and illuminate dark under-eye circles.",
-        primaryImage: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=800&q=80",
+        primaryImage: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=800&q=80",
         hoverImg: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
     },
     {
@@ -655,7 +655,7 @@ export const store = [
         volume: "400 g / 14 oz",
         descr: "Epsom and dead sea salts blended with dried French lavender buds to melt away daily stress.",
         primaryImage: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80",
-        hoverImg: "https://images.unsplash.com/photo-1512290900672-1f02e604f326?auto=format&fit=crop&w=800&q=80"
+        hoverImg: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80"
     }
 ];
 

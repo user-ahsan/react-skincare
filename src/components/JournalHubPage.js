@@ -22,7 +22,7 @@ export const articlesData = [
         readTime: "7 min read",
         author: "Ahsan Sheikh",
         date: "October 2026",
-        image: "https://images.unsplash.com/photo-1556228722-d0b71e16b51e?auto=format&fit=crop&w=1200&q=80",
+        image: "https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=1200&q=80",
         featured: true
     },
     {
@@ -244,3 +244,4 @@ const JournalHubPage = () => {
 };
 
 export default JournalHubPage;
+

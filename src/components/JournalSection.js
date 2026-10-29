@@ -46,7 +46,7 @@ const JournalSection = () => {
                 <Link to="/journal/daily-skincare-ritual" className="group">
                     <div className="overflow-hidden rounded-xl shadow-md">
                         <img
-                            src='https://images.unsplash.com/photo-1556228722-d0b71e16b51e?auto=format&fit=crop&w=600&q=80'
+                            src='https://images.unsplash.com/photo-1532413992378-f169ac26fff0?auto=format&fit=crop&w=600&q=80'
                             alt='Morning to Night Skincare Ritual'
                             className='jsImg rounded-xl transform group-hover:scale-105 transition-transform duration-500'
                         />
