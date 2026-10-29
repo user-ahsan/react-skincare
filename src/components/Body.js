@@ -78,7 +78,7 @@ const Body = ({ onClose }) => {
                     {activeTab === 'body' && (
                         <div className="grid grid-cols-12 gap-5 items-start animate-fadeIn">
                             <div className="col-span-4 space-y-2 border-r border-gray-100 pr-4">
-                                <span className="text-[11px] font-bold tracking-wider uppercase text-gray-400 block mb-2">
+                                <span className="text-[11px] font-bold tracking-wider uppercase text-[#2b4c3e] block mb-2">
                                     BODY RITUALS
                                 </span>
                                 <div className="space-y-1.5 text-xs font-medium text-gray-700">
@@ -87,6 +87,7 @@ const Body = ({ onClose }) => {
                                     <Link to="/collections/body" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Velvet Body Lotions</Link>
                                     <Link to="/collections/body" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Cold-Pressed Body Oil</Link>
                                     <Link to="/collections/body" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Aromatic Hand Care</Link>
+                                    <Link to="/collections/bath-body" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Dead Sea Bath Soaks</Link>
                                 </div>
                             </div>
                             <div className="col-span-8 grid grid-cols-3 gap-3">
@@ -123,11 +124,11 @@ const Body = ({ onClose }) => {
                                     <Link to="/collections/haircare" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Scalp Detox & Density Drops</Link>
                                 </div>
                                 <div className="pt-2 border-t border-gray-100">
-                                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-1">TARGET CONCERNS</span>
+                                    <span className="text-[10px] font-bold text-[#2b4c3e] uppercase tracking-wider block mb-1">TARGET CONCERNS</span>
                                     <div className="flex flex-wrap gap-1.5 text-[10px]">
-                                        <span className="px-2 py-0.5 bg-gray-100 rounded-full">Moisture Repair</span>
-                                        <span className="px-2 py-0.5 bg-gray-100 rounded-full">Scalp Balance</span>
-                                        <span className="px-2 py-0.5 bg-gray-100 rounded-full">Volume & Lift</span>
+                                        <Link to="/collections/haircare" onClick={onClose} className="px-2.5 py-1 bg-gray-100 hover:bg-[#2b4c3e] hover:text-white rounded-full transition-colors font-medium">Moisture Repair</Link>
+                                        <Link to="/collections/haircare" onClick={onClose} className="px-2.5 py-1 bg-gray-100 hover:bg-[#2b4c3e] hover:text-white rounded-full transition-colors font-medium">Scalp Balance</Link>
+                                        <Link to="/collections/haircare" onClick={onClose} className="px-2.5 py-1 bg-gray-100 hover:bg-[#2b4c3e] hover:text-white rounded-full transition-colors font-medium">Volume & Lift</Link>
                                     </div>
                                 </div>
                             </div>

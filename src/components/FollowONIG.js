@@ -33,7 +33,7 @@ const communityImages = [
   },
   {
     id: 5,
-    url: "https://images.unsplash.com/photo-1608248597359-0a672da123d4?auto=format&fit=crop&w=600&q=80",
+    url: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80",
     tag: "#OrganicGlow"
   },
   {
@@ -48,7 +48,7 @@ const communityImages = [
   },
   {
     id: 8,
-    url: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&w=600&q=80",
+    url: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=600&q=80",
     tag: "#PlantPotency"
   },
   {
@@ -70,7 +70,7 @@ const FollowONIG = () => {
         <span className="flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-[#2d4b3e] font-semibold mb-2">
           <FaInstagram className="text-base" /> Join Our Community
         </span>
-        <h2 className='igText text-3xl font-serif text-[#162720] tracking-wider uppercase'>
+        <h2 className='text-3xl font-serif text-[#162720] tracking-wider uppercase'>
           FOLLOW US ON INSTAGRAM
         </h2>
         <p className="text-sm text-gray-500 mt-2">

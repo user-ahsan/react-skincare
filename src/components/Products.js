@@ -4,7 +4,7 @@ import OurBestSellers from './OurBestSellers';
 
 const Products = () => {
     return (
-        <div className='ourBestSellersMainParent'>
+        <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mb-24">
             {store
                 .filter((item) => item.type === "ourBestSellers")
                 .map((item) => (
@@ -16,7 +16,7 @@ const Products = () => {
                         image={item.primaryImage}
                     />
                 ))}
-        </div>
+        </section>
     );
 };
 

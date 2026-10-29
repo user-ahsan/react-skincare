@@ -119,46 +119,96 @@ const SPFooter = () => {
 
                 {/* Column 2: Collections */}
                 <div>
-                    <h4 className="text-white font-serif text-base mb-4 tracking-wider uppercase">Collections</h4>
-                    <ul className="space-y-2 text-[#a8beae] text-xs">
-                        <li><Link to="/shop" className="hover:text-white transition-colors">Shop All Catalog</Link></li>
-                        <li><Link to="/collections/skincare" className="hover:text-white transition-colors">Face & Skincare</Link></li>
-                        <li><Link to="/collections/body" className="hover:text-white transition-colors">Botanical Body Wash</Link></li>
-                        <li><Link to="/collections/haircare" className="hover:text-white transition-colors">Pure Haircare</Link></li>
-                        <li><Link to="/collections/aromatherapy" className="hover:text-white transition-colors">Aromatherapy Living</Link></li>
-                        <li><Link to="/collections/tools" className="hover:text-white transition-colors">Ritual Tools & Gua Sha</Link></li>
-                        <li><Link to="/collections/gift-sets" className="hover:text-white transition-colors">Luxury Gift Boxes</Link></li>
-                        <li><Link to="/under20" className="hover:text-white transition-colors">Under $20 Essentials</Link></li>
-                    </ul>
+                    <h4 className="text-white font-serif text-sm font-bold tracking-[0.2em] uppercase pb-2.5 mb-4 border-b border-[#355745] flex items-center justify-between">
+                        <span>COLLECTIONS</span>
+                        <span className="text-[#a3c9a8] text-xs">🌿</span>
+                    </h4>
+                    <div className="space-y-4">
+                        <div>
+                            <span className="text-[10px] font-bold text-[#a3c9a8] tracking-widest uppercase block mb-1.5">
+                                BY CATEGORY
+                            </span>
+                            <ul className="space-y-2 text-xs">
+                                <li><Link to="/collections/skincare" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Face & Skincare</Link></li>
+                                <li><Link to="/collections/body" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Botanical Body Wash</Link></li>
+                                <li><Link to="/collections/haircare" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Pure Scalp & Hair</Link></li>
+                                <li><Link to="/collections/aromatherapy" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Aromatherapy Living</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span className="text-[10px] font-bold text-[#a3c9a8] tracking-widest uppercase block mb-1.5">
+                                CURATED SETS
+                            </span>
+                            <ul className="space-y-2 text-xs">
+                                <li><Link to="/collections/gift-sets" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Luxury Gift Boxes</Link></li>
+                                <li><Link to="/under20" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Under $20 Essentials</Link></li>
+                                <li><Link to="/under40" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Under $40 Bundles</Link></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Column 3: The Brand */}
                 <div>
-                    <h4 className="text-white font-serif text-base mb-4 tracking-wider uppercase">The Brand</h4>
-                    <ul className="space-y-2 text-[#a8beae] text-xs">
-                        <li><Link to="/about" className="hover:text-white transition-colors">Our Philosophy & Story</Link></li>
-                        <li><Link to="/ingredients" className="hover:text-white transition-colors">Botanical Glossary (A–Z)</Link></li>
-                        <li><Link to="/locations" className="hover:text-white transition-colors">Boutique Ateliers</Link></li>
-                        <li><Link to="/journal" className="hover:text-white transition-colors">Wellness Journal</Link></li>
-                        <li><Link to="/sustainability" className="hover:text-white transition-colors">Sustainability Pledge</Link></li>
-                        <li><Link to="/reviews" className="hover:text-white transition-colors">Verified Reviews</Link></li>
-                        <li><Link to="/press" className="hover:text-white transition-colors">Press & Editorial</Link></li>
-                        <li><Link to="/careers" className="hover:text-white transition-colors">Atelier Careers</Link></li>
-                    </ul>
+                    <h4 className="text-white font-serif text-sm font-bold tracking-[0.2em] uppercase pb-2.5 mb-4 border-b border-[#355745] flex items-center justify-between">
+                        <span>THE BRAND</span>
+                        <span className="text-[#a3c9a8] text-xs">🌸</span>
+                    </h4>
+                    <div className="space-y-4">
+                        <div>
+                            <span className="text-[10px] font-bold text-[#a3c9a8] tracking-widest uppercase block mb-1.5">
+                                APOTHECARY STORY
+                            </span>
+                            <ul className="space-y-2 text-xs">
+                                <li><Link to="/about" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Philosophy & Story</Link></li>
+                                <li><Link to="/ingredients" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Botanical Glossary (A–Z)</Link></li>
+                                <li><Link to="/locations" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Global Boutique Ateliers</Link></li>
+                                <li><Link to="/sustainability" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Sustainability Pledge</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span className="text-[10px] font-bold text-[#a3c9a8] tracking-widest uppercase block mb-1.5">
+                                EDITORIAL & CULTURE
+                            </span>
+                            <ul className="space-y-2 text-xs">
+                                <li><Link to="/journal" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Wellness Journal</Link></li>
+                                <li><Link to="/press" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Press & Media Kit</Link></li>
+                                <li><Link to="/reviews" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Verified Reviews</Link></li>
+                                <li><Link to="/careers" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Atelier Careers</Link></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Column 4: Client Services & Rituals */}
                 <div>
-                    <h4 className="text-white font-serif text-base mb-4 tracking-wider uppercase">Client Care</h4>
-                    <ul className="space-y-2 text-[#a8beae] text-xs">
-                        <li><Link to="/quiz" className="hover:text-[#a3c9a8] font-semibold transition-colors">Routine Finder Quiz (15% Off)</Link></li>
-                        <li><Link to="/rewards" className="hover:text-[#a3c9a8] font-semibold transition-colors">VIP Botanical Circle Rewards</Link></li>
-                        <li><Link to="/gift-cards" className="hover:text-white transition-colors">Digital Gift Cards</Link></li>
-                        <li><Link to="/track-order" className="hover:text-white transition-colors">Live Order Tracker</Link></li>
-                        <li><Link to="/faq" className="hover:text-white transition-colors">Help Center & FAQ</Link></li>
-                        <li><Link to="/shipping-policy" className="hover:text-white transition-colors">Shipping & Returns</Link></li>
-                        <li><Link to="/contact" className="hover:text-white transition-colors">Contact Concierge</Link></li>
-                    </ul>
+                    <h4 className="text-white font-serif text-sm font-bold tracking-[0.2em] uppercase pb-2.5 mb-4 border-b border-[#355745] flex items-center justify-between">
+                        <span>CLIENT CARE</span>
+                        <span className="text-[#a3c9a8] text-xs">✨</span>
+                    </h4>
+                    <div className="space-y-4">
+                        <div>
+                            <span className="text-[10px] font-bold text-[#a3c9a8] tracking-widest uppercase block mb-1.5">
+                                RITUAL CONCIERGE
+                            </span>
+                            <ul className="space-y-2 text-xs">
+                                <li><Link to="/quiz" className="text-white bg-[#2b4c3e] px-2.5 py-1 rounded-md text-[11px] font-bold hover:bg-[#396351] inline-flex items-center gap-1.5 transition-all shadow-sm"><span className="text-[#a3c9a8]">★</span> Routine Quiz (15% Off)</Link></li>
+                                <li><Link to="/rewards" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> VIP Rewards Circle</Link></li>
+                                <li><Link to="/gift-cards" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Digital Gift Cards</Link></li>
+                                <li><Link to="/track-order" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Live Order Tracker</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span className="text-[10px] font-bold text-[#a3c9a8] tracking-widest uppercase block mb-1.5">
+                                HELP & POLICIES
+                            </span>
+                            <ul className="space-y-2 text-xs">
+                                <li><Link to="/faq" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Help Center & FAQ</Link></li>
+                                <li><Link to="/shipping-policy" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Shipping & Returns</Link></li>
+                                <li><Link to="/contact" className="text-[#d8e8dc] hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all font-medium"><span className="text-[#a3c9a8] text-[9px]">•</span> Contact Concierge</Link></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 

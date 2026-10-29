@@ -29,7 +29,7 @@ const slides = [
     subtitle: "Zero artificial fragrances, parabens, sulfates, or micro-plastics.",
     ctaText: "Explore Skincare",
     ctaLink: "/collections/skincare",
-    image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1920&q=85"
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=85"
   },
   {
     id: 3,
