@@ -20,12 +20,14 @@
 ## ✨ Key Features & Architecture
 
 ### 🛍️ 1. Complete Catalog & Real-Time Filtering (`/shop`)
+
 - **Live Search & Filter:** Search by product title, keyword, or botanical category with instant DOM updates.
 - **Dynamic Price Range:** Interactive range slider filtering products from $10 to $70+.
 - **Multi-Factor Sorting:** Sort by Featured Rituals, Price: Low to High, Price: High to Low, or Highest Customer Rating.
 - **Interactive Product Cards:** High-definition photography with hover transitions, star ratings, category pills, wishlist toggle, and instant Add-to-Bag with notifications.
 
 ### 🌿 2. Curated Collections System (`/collections` & `/collections/:category`)
+
 - Tailored collection hubs with editorial hero banners and thematic descriptions:
   - **Face & Skincare:** Cold-pressed elixirs, antioxidant toners, and French green clay masques.
   - **Body Sanctuary:** Arabica coffee scrubs, crushed walnut polishes, and virgin coconut body washes.
@@ -34,37 +36,44 @@
   - **Restorative Wellness:** French lavender bath crystals and calming sleeping drops.
 
 ### 🛒 3. Centralized Redux Toolkit State Management
+
 - **Persistent Cart:** Fully synchronized with browser `localStorage` to preserve items, quantities, and pricing between sessions.
 - **Wishlist Manager (`/wishlist`):** Dedicated page to view saved products, remove items, or move all items directly into the shopping bag with one click.
 - **Promo Code Engine:** Live coupon evaluation (`AHSAN20` for 20% off, `AHSAN30` for 30% off, `WELCOME20`).
 - **Free Shipping Threshold:** Real-time visual progress bar showing exact remaining dollar amount required to unlock complimentary shipping.
 
 ### 💳 4. Multi-Step Checkout Pipeline (`/checkout`)
+
 - **Step 1:** Customer Information & Shipping Destination (Name, Email, Street Address, State, Postal Code).
 - **Step 2:** Delivery Method Selection (Complimentary Standard over $50, Priority 2-Day Air, Overnight Express).
 - **Step 3:** Payment Gateways (Live Card Entry with preview, PayPal, Google Pay, Apple Pay).
 - **Order Confirmation:** Dynamic order generation (`AB-2026-XXXX`) with instant order details modal and direct link to live tracking.
 
 ### 📦 5. Live Order Tracking Dashboard (`/track-order`)
+
 - Interactive lookup by Order ID (e.g., `AB-2026-8941`) with 1-click demo test mode.
 - 5-stage visual progress timeline: *Order Confirmed → Cold-Pressed & Bottled → Quality Inspected → Out for Delivery → Delivered*.
 - Displays carrier details, carbon-neutral verification badge, destination address, and parcel contents breakdown.
 
 ### 📰 6. Editorial Wellness Journal (`/journal` & `/journal/:slug`)
+
 - Magazine-style publishing hub with article search and category filters.
 - In-depth editorial pieces covering botanical haircare, morning-to-night skincare sequencing, and green chemistry.
 - Estimated reading times, publication timestamps, and author footprint by Ahsan Sheikh.
 
 ### 💬 7. Client Concierge & Support Hub (`/contact` & `/faq`)
+
 - **Contact Concierge:** Interactive contact form with client feedback alerts, direct email (`ahsansheikhoffice@gmail.com`), phone assistance, and global showroom addresses (New York, London, Tokyo, Melbourne).
 - **Searchable FAQ:** Accordion knowledge base categorized by Shipping, Ingredients, Returns, and Orders.
 
 ### ⭐ 8. Verified Community Reviews (`/reviews`)
+
 - Customer rating breakdown (4.9 / 5.0 across 1,840+ reviews).
 - Filter reviews by star rating.
 - Interactive "Write a Review" modal with instant submission feedback.
 
 ### 🌍 9. Sustainability & Brand Story (`/about` & `/sustainability`)
+
 - Founder's letter from Ahsan Sheikh detailing our green chemistry philosophy.
 - Key impact statistics: 50K+ customers, 100% vegan & cruelty-free, zero synthetic fragrances, 1:1 tree planted per order.
 - Biophotonic violet glass and zero-waste packaging explanations.
@@ -74,7 +83,7 @@
 ## 🛠️ Technology Stack
 
 | Layer | Technologies |
-|---|---|
+| --- | --- |
 | **Core Framework** | React 18.2.0, JavaScript (ES6+), JSX |
 | **Routing** | React Router DOM v6 (Nested Routes, URL Search Params, Dynamic Slugs) |
 | **State Architecture** | Redux Toolkit (`@reduxjs/toolkit`), React Redux, LocalStorage Persistence |
@@ -87,7 +96,7 @@
 
 ## 📂 Project Structure
 
-```
+```text
 react-e-commerce/
 ├── public/
 │   ├── favicon.ico
@@ -149,10 +158,12 @@ react-e-commerce/
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
+
 - **Node.js:** v16.x or newer (Tested through Node v26.x)
 - **Package Manager:** `npm` (v8.x+)
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/user-ahsan/aura-botanics-luxury-ecommerce.git
@@ -165,15 +176,19 @@ npm install --legacy-peer-deps
 ```
 
 ### Development Server
+
 ```bash
 npm start
 ```
+
 Open [http://localhost:3000](http://localhost:3000) to view the application live in your browser.
 
 ### Production Build
+
 ```bash
 npm run build
 ```
+
 Creates an optimized, minified production build in the `build/` directory ready for deployment on Vercel, Netlify, or AWS Amplify.
 
 ---

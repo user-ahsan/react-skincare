@@ -1,0 +1,15 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true
+  },
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/node_modules/**": true
+  },
+  "eslint.enable": true,
+  "eslint.workingDirectories": ["."]
+}
