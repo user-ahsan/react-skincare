@@ -6,189 +6,226 @@
  */
 
 import React, { useState } from 'react';
-import "../styles/Body.css";
 import { store } from '../productsStore/Store';
 import HoverImage from "react-hover-image/build";
 import { Link } from 'react-router-dom';
 
-const Body = () => {
-    const [show, setShow] = useState(true);
-    const [show2, setShow2] = useState(false);
-    const [show3, setShow3] = useState(false);
-    const [show4, setShow4] = useState(false);
+const Body = ({ onClose }) => {
+    const [activeTab, setActiveTab] = useState('body');
 
-    const showHandler = () => {
-        setShow(true);
-        setShow2(false);
-        setShow3(false);
-        setShow4(false);
-    };
+    const tabs = [
+        { id: 'body', label: 'BODY CARE', subtitle: 'Cleansers & balms' },
+        { id: 'hair', label: 'HAIR & SCALP', subtitle: 'Follicular nutrition' },
+        { id: 'travel', label: 'TRAVEL ESSENTIALS', subtitle: 'Carry-on sizes' },
+        { id: 'new', label: 'NEW ARRIVALS', subtitle: 'Fresh apothecary drops' },
+    ];
 
-    const showHandler2 = () => {
-        setShow(false);
-        setShow2(true);
-        setShow3(false);
-        setShow4(false);
-    };
-
-    const showHandler3 = () => {
-        setShow(false);
-        setShow2(false);
-        setShow3(true);
-        setShow4(false);
-    };
-
-    const showHandler4 = () => {
-        setShow(false);
-        setShow2(false);
-        setShow3(false);
-        setShow4(true);
-    };
-
-    const dontShowHandler = () => {
-        setShow(false);
-        setShow2(false);
-        setShow3(false);
-        setShow4(false);
-    };
+    const bodyProducts = store.filter(item => item.type === "navbar-BodyType" || item.category === "Body Care").slice(0, 3);
+    const travelProducts = store.filter(item => item.type === "navbar-TravelType" || item.category === "Travel").slice(0, 3);
+    const newProducts = store.filter(item => item.type === "navbar-NewType" || item.isNew).slice(0, 3);
 
     return (
-        <div>
-            <div className='categoryHold flex flex-col gap-14 font-normal absolute left-16 top-11'>
-                <div className='bodyHold lineHeight w-56 w56rem cursor-pointer' onMouseEnter={showHandler}>
-                    <p className={`font-semibold hover-underline-animation ${show ? 'text-[#2b4c3e]' : ''}`}>BODY</p>
+        <div className="w-[880px] bg-white rounded-2xl shadow-2xl p-6 border border-[#e5dfd3] relative z-50">
+            {/* Top Header */}
+            <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-100">
+                <div>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#2b4c3e] font-bold block">
+                        Complete Range
+                    </span>
+                    <h3 className="text-base font-serif font-bold text-[#192b23]">
+                        Apothecary Formulations & Categories
+                    </h3>
                 </div>
-
-                <div className='hairHold lineHeight w-56 cursor-pointer' onMouseEnter={showHandler2}>
-                    <p className={`font-semibold hover-underline-animation ${show2 ? 'text-[#2b4c3e]' : ''}`}>HAIR</p>
-                </div>
-
-                <div className='travelHold w-52 lineHeight cursor-pointer' onMouseEnter={showHandler3}>
-                    <p className={`font-semibold hover-underline-animation ${show3 ? 'text-[#2b4c3e]' : ''}`}>TRAVEL</p>
-                </div>
-
-                <div className='newHold lineHeight cursor-pointer' onMouseEnter={showHandler4}>
-                    <p className={`font-semibold hover-underline-animation ${show4 ? 'text-[#2b4c3e]' : ''}`}>NEW</p>
-                </div>
+                <Link
+                    to="/shop"
+                    onClick={onClose}
+                    className="text-xs text-[#2b4c3e] hover:underline font-semibold flex items-center gap-1"
+                >
+                    Browse Entire Catalog →
+                </Link>
             </div>
 
-            {show && (
-                <div className='z-50 bodyContent color text-base' onMouseLeave={dontShowHandler}>
-                    <Link to="/collections/body" className="block hover:text-[#2b4c3e] transition-colors">Body Wash</Link>
-                    <Link to="/collections/body" className="block hover:text-[#2b4c3e] transition-colors">Body Scrub</Link>
-                    <Link to="/collections/body" className="block hover:text-[#2b4c3e] transition-colors">Body Lotions</Link>
-                    <Link to="/collections/body" className="block hover:text-[#2b4c3e] transition-colors">Body Oil</Link>
-                    <Link to="/collections/body" className="block hover:text-[#2b4c3e] transition-colors">Hand Wash</Link>
-                    <Link to="/collections/body" className="block hover:text-[#2b4c3e] transition-colors">Hand Creams</Link>
+            {/* Main Content Layout */}
+            <div className="grid grid-cols-12 gap-6 min-h-[290px]">
+                {/* Left Tabs Column */}
+                <div className="col-span-3 border-r border-gray-100 pr-3 space-y-2">
+                    <span className="text-[10px] font-bold tracking-wider uppercase text-gray-400 block mb-2">
+                        SELECT CATEGORY
+                    </span>
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            type="button"
+                            onClick={() => setActiveTab(tab.id)}
+                            onMouseEnter={() => setActiveTab(tab.id)}
+                            className={`w-full text-left p-3 rounded-xl transition-all flex flex-col ${
+                                activeTab === tab.id
+                                    ? 'bg-[#192b23] text-white shadow-sm'
+                                    : 'text-gray-700 hover:bg-[#f4f1ea]'
+                            }`}
+                        >
+                            <span className="text-xs font-bold tracking-wider">{tab.label}</span>
+                            <span className={`text-[10px] ${activeTab === tab.id ? 'text-[#a3c9a8]' : 'text-gray-400'}`}>
+                                {tab.subtitle}
+                            </span>
+                        </button>
+                    ))}
+                </div>
 
-                    <div className='bodyTypeHold flex'>
-                        {store.filter(item => item.type === "navbar-BodyType").map((item) => (
-                            <Link to={`/${item.id}`} key={item.id}>
-                                <div className="bodyTypeIndivitual group">
-                                    <HoverImage
-                                        src={item.primaryImage}
-                                        hoverSrc={item.hoverImg}
-                                        className="rounded-xl bodyTypeImage shadow-sm group-hover:shadow-md transition-shadow"
-                                        alt={item.name}
-                                    />
-                                    <p className='text-center fs bodyTypeName font-medium mt-2'> {item.name} </p>
-                                    <p className='text-center text-xs text-gray-500'>${item.price}</p>
+                {/* Right Tab Content */}
+                <div className="col-span-9 pl-2">
+                    {/* Tab: BODY */}
+                    {activeTab === 'body' && (
+                        <div className="grid grid-cols-12 gap-5 items-start animate-fadeIn">
+                            <div className="col-span-4 space-y-2 border-r border-gray-100 pr-4">
+                                <span className="text-[11px] font-bold tracking-wider uppercase text-gray-400 block mb-2">
+                                    BODY RITUALS
+                                </span>
+                                <div className="space-y-1.5 text-xs font-medium text-gray-700">
+                                    <Link to="/collections/body" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Botanical Body Wash</Link>
+                                    <Link to="/collections/body" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Walnut Exfoliating Scrub</Link>
+                                    <Link to="/collections/body" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Velvet Body Lotions</Link>
+                                    <Link to="/collections/body" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Cold-Pressed Body Oil</Link>
+                                    <Link to="/collections/body" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Aromatic Hand Care</Link>
                                 </div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            )}
-
-            {show2 && (
-                <div className='z-50 hairContent flex flex-col' onMouseLeave={dontShowHandler}>
-                    <div className='hairTypeCategoryONE flex flex-col gap-8'>
-                        <p className='font-bold text-xl'>CATEGORY</p>
-                        <Link to="/collections/haircare" className="hover:text-[#2b4c3e]">Botanical Shampoos</Link>
-                        <Link to="/collections/haircare" className="hover:text-[#2b4c3e]">Nourishing Conditioners</Link>
-                        <Link to="/collections/haircare" className="hover:text-[#2b4c3e]">Scalp Treatments</Link>
-                    </div>
-
-                    <div className='hairTypeCategoryTWO flex-col flex gap-10'>
-                        <p className='font-bold'>HAIR CONCERN</p>
-                        <p>Deep Cleanse</p>
-                        <p>Moisture Repair</p>
-                        <p>Dry & Damaged</p>
-                        <p>Volume & Lift</p>
-                        <p>Normal & Color-Treated</p>
-                    </div>
-
-                    <div className='hairImageHold flex flex-row gap-10'>
-                        <img
-                            src='https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=500&q=80'
-                            className='rounded-xl w-52 h-44 object-cover shadow-sm'
-                            alt="Botanical Haircare"
-                        />
-                        <img
-                            src='https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=500&q=80'
-                            className='rounded-xl w-52 h-44 object-cover shadow-sm'
-                            alt="Sustainable Routine"
-                        />
-                    </div>
-
-                    <div className='hairTextHold flex flex-row relative font-semibold text-xs'>
-                        <p className='flex flex-row flex-wrap w-56'>Pure Haircare: Why Cold-Pressed Extracts Win</p>
-                        <p className='flex flex-row flex-wrap w-56'>Holistic scalp wellbeing with Ahsan Sheikh</p>
-                    </div>
-                </div>
-            )}
-
-            {show3 && (
-                <div className='z-50 travelContent' onMouseLeave={dontShowHandler}>
-                    <div className='flex flex-row'>
-                        <div className='TravelStoreHold flex flex-row gap-16'>
-                            {store.filter(item => item.type === "navbar-TravelType").map((item) => (
-                                <Link to={`/${item.id}`} key={item.id}>
-                                    <div className="TravelIndivitual group">
-                                        <HoverImage
-                                            src={item.primaryImage}
-                                            hoverSrc={item.hoverImg}
-                                            className="rounded-xl w-40 h-40 object-cover shadow-sm group-hover:shadow-md transition-shadow"
-                                            alt={item.name}
-                                        />
-                                        <p className='font-semibold text-sm px mt-2'> {item.name} </p>
-                                        <p className='text-sm font-medium text-center text-[#2b4c3e]'> ${item.price} </p>
-                                    </div>
-                                </Link>
-                            ))}
+                            </div>
+                            <div className="col-span-8 grid grid-cols-3 gap-3">
+                                {bodyProducts.map((item) => (
+                                    <Link to={`/${item.id}`} key={item.id} onClick={onClose} className="group block text-center">
+                                        <div className="w-full aspect-square bg-[#f5f2ea] rounded-xl overflow-hidden mb-2 p-2 flex items-center justify-center border border-gray-100 group-hover:border-[#a3c9a8] transition-all group-hover:shadow-md">
+                                            <HoverImage
+                                                src={item.primaryImage}
+                                                hoverSrc={item.hoverImg || item.primaryImage}
+                                                alt={item.name}
+                                                className="w-full h-full object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <p className="text-[11px] font-serif font-semibold text-[#192b23] group-hover:text-[#2b4c3e] transition-colors line-clamp-1">
+                                            {item.name}
+                                        </p>
+                                        <p className="text-xs font-bold text-gray-800">${item.price}</p>
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                </div>
-            )}
+                    )}
 
-            {show4 && (
-                <div className='newContent relative left-72 text-base text-gray-500 top-16' onMouseLeave={dontShowHandler}>
-                    <div className='newCategoryHold flex flex-col gap-9'>
-                        <p className='font-bold text-xl text-gray-800'>CATEGORY</p>
-                        <Link to="/collections/skincare" className="hover:text-[#2b4c3e]">Brightening Range</Link>
-                        <Link to="/collections/skincare" className="hover:text-[#2b4c3e]">Facial Masques</Link>
-                        <Link to="/collections/skincare" className="hover:text-[#2b4c3e]">Rosehip Elixirs</Link>
-                        <Link to="/shop" className="hover:text-[#2b4c3e] font-semibold text-black">Shop All New Arrivals →</Link>
-                    </div>
-
-                    <div className='newTypeHold relative flex flex-row gap-10'>
-                        {store.filter(item => item.type === "navbar-NewType").map((item) => (
-                            <Link to={`/${item.id}`} key={item.id}>
-                                <div className='newIndivitual group'>
-                                    <HoverImage
-                                        src={item.primaryImage}
-                                        hoverSrc={item.hoverImg}
-                                        className="rounded-xl w-40 h-40 object-cover shadow-sm group-hover:shadow-md transition-shadow"
-                                        alt={item.name}
-                                    />
-                                    <p className='font-semibold text-center text-sm px mt-2 text-gray-800'> {item.name} </p>
-                                    <p className='text-sm font-medium text-center text-[#2b4c3e]'> ${item.price} </p>
+                    {/* Tab: HAIR */}
+                    {activeTab === 'hair' && (
+                        <div className="grid grid-cols-12 gap-5 items-start animate-fadeIn">
+                            <div className="col-span-5 space-y-3 border-r border-gray-100 pr-4">
+                                <span className="text-[11px] font-bold tracking-wider uppercase text-gray-400 block mb-1">
+                                    HAIRCARE PILLARS
+                                </span>
+                                <div className="space-y-1.5 text-xs font-medium text-gray-700">
+                                    <Link to="/collections/haircare" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Botanical Shampoos</Link>
+                                    <Link to="/collections/haircare" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Nourishing Conditioners</Link>
+                                    <Link to="/collections/haircare" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Scalp Detox & Density Drops</Link>
                                 </div>
-                            </Link>
-                        ))}
-                    </div>
+                                <div className="pt-2 border-t border-gray-100">
+                                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-1">TARGET CONCERNS</span>
+                                    <div className="flex flex-wrap gap-1.5 text-[10px]">
+                                        <span className="px-2 py-0.5 bg-gray-100 rounded-full">Moisture Repair</span>
+                                        <span className="px-2 py-0.5 bg-gray-100 rounded-full">Scalp Balance</span>
+                                        <span className="px-2 py-0.5 bg-gray-100 rounded-full">Volume & Lift</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-span-7 grid grid-cols-2 gap-4">
+                                <div className="bg-[#f8f6f0] p-3 rounded-xl border border-gray-100">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=500&q=80"
+                                        alt="Cold-Pressed Haircare"
+                                        className="w-full h-28 object-cover rounded-lg mb-2"
+                                    />
+                                    <p className="font-serif font-bold text-xs text-[#192b23]">Pure Botanical Scalp Health</p>
+                                    <p className="text-[10px] text-gray-500 mt-1">Why cold-pressed botanical density extracts transform follicles.</p>
+                                    <Link to="/journal/april" onClick={onClose} className="text-[10px] font-semibold text-[#2b4c3e] hover:underline mt-1 block">Read Study →</Link>
+                                </div>
+                                <div className="bg-[#f8f6f0] p-3 rounded-xl border border-gray-100">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=500&q=80"
+                                        alt="Holistic Scalp Ritual"
+                                        className="w-full h-28 object-cover rounded-lg mb-2"
+                                    />
+                                    <p className="font-serif font-bold text-xs text-[#192b23]">Scalp Detox Ritual</p>
+                                    <p className="text-[10px] text-gray-500 mt-1">Certified organic rosemary & peppermint clarifying therapy.</p>
+                                    <Link to="/collections/haircare" onClick={onClose} className="text-[10px] font-semibold text-[#2b4c3e] hover:underline mt-1 block">Shop Haircare →</Link>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Tab: TRAVEL */}
+                    {activeTab === 'travel' && (
+                        <div className="grid grid-cols-12 gap-5 items-start animate-fadeIn">
+                            <div className="col-span-4 space-y-2 border-r border-gray-100 pr-4">
+                                <span className="text-[11px] font-bold tracking-wider uppercase text-gray-400 block mb-2">
+                                    TRAVEL SIZES
+                                </span>
+                                <div className="space-y-1.5 text-xs font-medium text-gray-700">
+                                    <Link to="/shop?category=Travel" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">TSA-Approved Kits</Link>
+                                    <Link to="/shop?category=Travel" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Mini Facial Elixirs</Link>
+                                    <Link to="/shop?category=Travel" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Pocket Aromatherapy</Link>
+                                </div>
+                            </div>
+                            <div className="col-span-8 grid grid-cols-3 gap-3">
+                                {travelProducts.map((item) => (
+                                    <Link to={`/${item.id}`} key={item.id} onClick={onClose} className="group block text-center">
+                                        <div className="w-full aspect-square bg-[#f5f2ea] rounded-xl overflow-hidden mb-2 p-2 flex items-center justify-center border border-gray-100 group-hover:border-[#a3c9a8] transition-all group-hover:shadow-md">
+                                            <HoverImage
+                                                src={item.primaryImage}
+                                                hoverSrc={item.hoverImg || item.primaryImage}
+                                                alt={item.name}
+                                                className="w-full h-full object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <p className="text-[11px] font-serif font-semibold text-[#192b23] group-hover:text-[#2b4c3e] transition-colors line-clamp-1">
+                                            {item.name}
+                                        </p>
+                                        <p className="text-xs font-bold text-gray-800">${item.price}</p>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Tab: NEW */}
+                    {activeTab === 'new' && (
+                        <div className="grid grid-cols-12 gap-5 items-start animate-fadeIn">
+                            <div className="col-span-4 space-y-2 border-r border-gray-100 pr-4">
+                                <span className="text-[11px] font-bold tracking-wider uppercase text-gray-400 block mb-2">
+                                    LATEST FORMULATIONS
+                                </span>
+                                <div className="space-y-1.5 text-xs font-medium text-gray-700">
+                                    <Link to="/shop" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Wild Plum Serums</Link>
+                                    <Link to="/shop" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Detoxifying Clay Masques</Link>
+                                    <Link to="/shop" onClick={onClose} className="block py-1 hover:text-[#2b4c3e] hover:translate-x-1 transition-all">Biophotonic Glass Editions</Link>
+                                    <Link to="/shop" onClick={onClose} className="block py-1 font-semibold text-[#2b4c3e] hover:underline mt-2">Shop All New Arrivals →</Link>
+                                </div>
+                            </div>
+                            <div className="col-span-8 grid grid-cols-3 gap-3">
+                                {newProducts.map((item) => (
+                                    <Link to={`/${item.id}`} key={item.id} onClick={onClose} className="group block text-center">
+                                        <div className="w-full aspect-square bg-[#f5f2ea] rounded-xl overflow-hidden mb-2 p-2 flex items-center justify-center border border-gray-100 group-hover:border-[#a3c9a8] transition-all group-hover:shadow-md">
+                                            <HoverImage
+                                                src={item.primaryImage}
+                                                hoverSrc={item.hoverImg || item.primaryImage}
+                                                alt={item.name}
+                                                className="w-full h-full object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <p className="text-[11px] font-serif font-semibold text-[#192b23] group-hover:text-[#2b4c3e] transition-colors line-clamp-1">
+                                            {item.name}
+                                        </p>
+                                        <p className="text-xs font-bold text-gray-800">${item.price}</p>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
-            )}
+            </div>
         </div>
     );
 };

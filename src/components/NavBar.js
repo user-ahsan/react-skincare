@@ -116,35 +116,47 @@ const NavBar = () => {
 
                 {/* Primary Navigation Menu */}
                 <nav className="hidden xl:flex items-center space-x-7 text-xs font-semibold tracking-widest text-[#2c3e34]" role="navigation">
-                    <div className="relative py-7 cursor-pointer" onMouseEnter={showHandler}>
+                    <div
+                        className="relative py-7 cursor-pointer"
+                        onMouseEnter={showHandler}
+                        onMouseLeave={dontShowHandler}
+                    >
                         <span className="hover:text-[#192b23] hover:underline underline-offset-8 transition-colors">
                             BEST SELLERS
                         </span>
                         {show && (
-                            <div className="absolute top-20 left-0 w-auto bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 z-50 animate-fadeIn" onMouseLeave={dontShowHandler}>
-                                <BestSellers />
+                            <div className="absolute top-[72px] -left-10 z-50 animate-fadeIn">
+                                <BestSellers onClose={dontShowHandler} />
                             </div>
                         )}
                     </div>
 
-                    <div className="relative py-7 cursor-pointer" onMouseEnter={showHandler2}>
+                    <div
+                        className="relative py-7 cursor-pointer"
+                        onMouseEnter={showHandler2}
+                        onMouseLeave={dontShowHandler}
+                    >
                         <span className="hover:text-[#192b23] hover:underline underline-offset-8 transition-colors">
                             GIFT SETS
                         </span>
                         {show2 && (
-                            <div className="absolute top-20 left-0 w-auto bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 z-50 animate-fadeIn" onMouseLeave={dontShowHandler}>
-                                <GiftSets />
+                            <div className="absolute top-[72px] -left-20 z-50 animate-fadeIn">
+                                <GiftSets onClose={dontShowHandler} />
                             </div>
                         )}
                     </div>
 
-                    <div className="relative py-7 cursor-pointer" onMouseEnter={showHandler3}>
+                    <div
+                        className="relative py-7 cursor-pointer"
+                        onMouseEnter={showHandler3}
+                        onMouseLeave={dontShowHandler}
+                    >
                         <span className="hover:text-[#192b23] hover:underline underline-offset-8 transition-colors">
                             SHOP RANGE
                         </span>
                         {show3 && (
-                            <div className="absolute top-20 -left-20 w-[720px] bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 z-50 animate-fadeIn" onMouseLeave={dontShowHandler}>
-                                <Body />
+                            <div className="absolute top-[72px] -left-32 z-50 animate-fadeIn">
+                                <Body onClose={dontShowHandler} />
                             </div>
                         )}
                     </div>
@@ -158,13 +170,17 @@ const NavBar = () => {
                     </Link>
 
                     {/* Experiences & Services Mega Dropdown */}
-                    <div className="relative py-7 cursor-pointer" onMouseEnter={showExperiencesHandler}>
+                    <div
+                        className="relative py-7 cursor-pointer"
+                        onMouseEnter={showExperiencesHandler}
+                        onMouseLeave={dontShowHandler}
+                    >
                         <span className="hover:text-[#192b23] hover:underline underline-offset-8 transition-colors flex items-center gap-1">
                             EXPERIENCES
                             <span className="text-[9px]">▾</span>
                         </span>
                         {showExperiences && (
-                            <div className="absolute top-20 -left-12 w-80 bg-white rounded-2xl shadow-2xl p-5 border border-gray-100 z-50 animate-fadeIn" onMouseLeave={dontShowHandler}>
+                            <div className="absolute top-[72px] -left-12 w-80 bg-white rounded-2xl shadow-2xl p-5 border border-[#e5dfd3] z-50 animate-fadeIn">
                                 <div className="space-y-3 text-left">
                                     <Link to="/quiz" onClick={dontShowHandler} className="block p-3 rounded-xl hover:bg-[#f4f1ea] transition-all">
                                         <div className="font-serif font-bold text-[#192b23] text-sm flex items-center justify-between">
