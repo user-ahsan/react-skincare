@@ -6,7 +6,7 @@
  */
 
 import React, { useState } from 'react';
-import { FaShoppingBag, FaHeart, FaBars, FaTimes, FaSearch, FaLeaf } from "react-icons/fa";
+import { FaShoppingBag, FaHeart, FaBars, FaTimes } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 

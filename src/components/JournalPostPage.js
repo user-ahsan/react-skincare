@@ -11,7 +11,7 @@ import { useParams, Link } from 'react-router-dom';
 import { articlesData } from './JournalHubPage';
 import BreadCrumb from './BreadCrumb';
 import SPFooter from './SPFooter';
-import { FaClock, FaUser, FaLeaf, FaArrowLeft, FaShareAlt } from 'react-icons/fa';
+import { FaClock, FaArrowLeft } from 'react-icons/fa';
 
 const JournalPostPage = () => {
     const { slug } = useParams();

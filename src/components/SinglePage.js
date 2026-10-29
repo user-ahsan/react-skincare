@@ -7,7 +7,7 @@
  */
 
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { store } from '../productsStore/Store';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../redux-state/CartState';
@@ -19,7 +19,7 @@ import AutoPlayMethods from './SingleAlsoLike';
 import JournalSection from "./JournalSection";
 import SearchBox from './SearchBox';
 import Review1 from './Review1';
-import { FaShippingFast, FaLock, FaHeart, FaRegHeart, FaCheck, FaLeaf } from "react-icons/fa";
+import { FaShippingFast, FaLock, FaHeart, FaRegHeart, FaCheck } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
 import SPFooter from './SPFooter';
 import { GiCardboardBoxClosed } from "react-icons/gi";

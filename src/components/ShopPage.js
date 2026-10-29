@@ -11,7 +11,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../redux-state/CartState';
 import { store } from '../productsStore/Store';
-import { FaHeart, FaRegHeart, FaStar, FaShoppingBag, FaFilter, FaSearch, FaCheck } from 'react-icons/fa';
+import { FaHeart, FaRegHeart, FaStar, FaShoppingBag, FaSearch, FaCheck } from 'react-icons/fa';
 import HoverImage from 'react-hover-image/build';
 import BreadCrumb from './BreadCrumb';
 import SPFooter from './SPFooter';

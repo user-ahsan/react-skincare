@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BreadCrumb from './BreadCrumb';
 import SPFooter from './SPFooter';
-import { FaClock, FaUser, FaTag, FaArrowRight, FaSearch } from 'react-icons/fa';
+import { FaClock, FaArrowRight, FaSearch } from 'react-icons/fa';
 
 export const articlesData = [
     {

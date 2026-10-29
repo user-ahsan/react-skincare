@@ -1,8 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import "../styles/SearchBox.css"
-import { AiOutlineSearch } from "react-icons/ai";
-import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react'
 import { AiFillStar } from "react-icons/ai"
 import Highlighter from "react-highlight-words";
 
@@ -56,16 +54,6 @@ const SearchBox = () => {
   const boostClickHnadler = () => {
     setSearch(boostClick);
   }
-
-
-  const executeOnClick = (isExpanded) => {
-    console.log(isExpanded);
-  }
-
-
-
-
-
 
   const names = [
     // 1 - 5 smell
@@ -478,11 +466,9 @@ const SearchBox = () => {
 
       <div className='searchItemsHold'>{names.filter(val => {
         if (search === "") {
-          return val;
+          return true;
         }
-        else if (val.description.toLowerCase().includes(search.toLowerCase())) {
-          return val;
-        }
+        return val.description.toLowerCase().includes(search.toLowerCase());
       }).slice(0, 6).map(i => {
         return (<div key={i.id} className="searchList relative">
           <p className='font-semibold text-md mb-1 capitalize'> {i.name}</p>

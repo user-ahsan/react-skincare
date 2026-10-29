@@ -10,7 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaLeaf, FaAward } from "react-icons/fa";
+import { FaArrowRight, FaLeaf } from "react-icons/fa";
 
 const slides = [
   {

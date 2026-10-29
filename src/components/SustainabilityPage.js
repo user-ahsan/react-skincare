@@ -8,7 +8,7 @@
 import React from 'react';
 import BreadCrumb from './BreadCrumb';
 import SPFooter from './SPFooter';
-import { FaLeaf, FaRecycle, FaTree, FaShieldAlt } from 'react-icons/fa';
+import { FaLeaf, FaRecycle, FaTree } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SustainabilityPage = () => {

@@ -15,7 +15,7 @@ import {
     AccordionIcon,
     Box
 } from '@chakra-ui/react';
-import { FaLeaf, FaRecycle, FaPaw, FaAward, FaCheckCircle } from 'react-icons/fa';
+import { FaLeaf, FaRecycle, FaPaw, FaAward } from 'react-icons/fa';
 
 const SinglePageFAQ = () => {
     return (

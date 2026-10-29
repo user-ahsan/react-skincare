@@ -41,18 +41,15 @@ export default class AutoPlayMethods extends Component {
         return (
             <div className="singleMainParentSlider">
                 <Slider ref={slider => (this.slider = slider)} {...settings}>
-                    {store.map((item) => {
-                        if (item.type == "ourBestSellers") {
-                            return (
-                                <Link to={`/${item.id}`} key={item.id}>
-                                    <div key={item.id}>
-                                        <img src={item.primaryImage} className=" rounded-md w-48 spCaroImg" />
-                                    </div>
-                                </Link>
-
-                            )
-                        }
-                    })}
+                    {store
+                        .filter(item => item.type === "ourBestSellers")
+                        .map((item) => (
+                            <Link to={`/${item.id}`} key={item.id}>
+                                <div>
+                                    <img src={item.primaryImage} alt={item.name} className=" rounded-md w-48 spCaroImg" />
+                                </div>
+                            </Link>
+                        ))}
                 </Slider>
 
             </div>

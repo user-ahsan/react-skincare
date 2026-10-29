@@ -8,7 +8,7 @@
 import React, { useState } from 'react';
 import BreadCrumb from './BreadCrumb';
 import SPFooter from './SPFooter';
-import { FaStar, FaCheckCircle, FaFilter, FaPen } from 'react-icons/fa';
+import { FaStar, FaCheckCircle, FaPen } from 'react-icons/fa';
 
 const sampleReviews = [
     {

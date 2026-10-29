@@ -9,7 +9,6 @@ import React, { useState } from 'react';
 import BreadCrumb from './BreadCrumb';
 import SPFooter from './SPFooter';
 import { FaSearch, FaBox, FaTruck, FaCheckCircle, FaClipboardCheck, FaLeaf } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 const sampleOrder = {
     orderId: "AB-2026-8941",
@@ -31,11 +30,9 @@ const sampleOrder = {
 const OrderTrackingPage = () => {
     const [query, setQuery] = useState("");
     const [trackingResult, setTrackingResult] = useState(null);
-    const [searched, setSearched] = useState(false);
 
     const handleSearch = (e) => {
         e.preventDefault();
-        setSearched(true);
         if (query.trim().toUpperCase().includes("AB-") || query.trim().length > 3) {
             setTrackingResult({
                 ...sampleOrder,
@@ -48,7 +45,6 @@ const OrderTrackingPage = () => {
 
     const handleTrySample = () => {
         setQuery("AB-2026-8941");
-        setSearched(true);
         setTrackingResult(sampleOrder);
     };
 

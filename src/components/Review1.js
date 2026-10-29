@@ -13,7 +13,7 @@ const Review1 = (props) => {
         <div>
 
             <div className='feelHold relative'>
-            <img src={feel} className="feelImg" />
+            <img src={feel} alt="Customer feel feedback" className="feelImg" />
             </div>
 
             <p className='revLine1 text-gray-300'> _____________________________________________________________________________________________________________________________________________________________________________________      </p>
