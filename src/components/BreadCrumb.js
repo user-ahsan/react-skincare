@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const BreadCrumb = (props) => {
   return (
-    <div className=' relative left-52 bgGrey'>
+    <div className='py-3 px-6 max-w-7xl mx-auto'>
       <Breadcrumb spacing='8px' separator={<ChevronRightIcon color='black' />}>
         <BreadcrumbItem>
           <Link to='/'>Home</Link>

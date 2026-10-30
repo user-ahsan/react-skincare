@@ -36,9 +36,7 @@ const Cart = (props) => {
         <p className=' font-semibold relative text-xl cartName fof w-56 whitespace-nowrap'> {title} </p>
         <p className=' relative w-24 cartPrice text-xl'>${price} </p>
 
-        <div className='middleLine relative text-gray-200'>
-          ___________________________________________________________
-        </div>
+        <div className='middleLine relative border-b border-gray-200 my-2'></div>
 
         <div className=' flex bg-black text-white flex-column gap-8 relative qtyhChangehold border bor w-40 hei rounded-md'>
           <div className=' flex flex-row gap-7'>
@@ -49,9 +47,7 @@ const Cart = (props) => {
         </div>
       </div>
 
-      <div className='topLine absolute text-gray-200'>
-        ______________________________________________________________________________
-      </div>
+      <div className='topLine relative border-b border-gray-200 mt-4'></div>
     </div>
   );
 };

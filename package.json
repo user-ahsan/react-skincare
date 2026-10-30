@@ -4,7 +4,7 @@
   "private": true,
   "description": "Full-stack aesthetic luxury botanical e-commerce web platform built with React 18, Redux Toolkit, Tailwind CSS, DaisyUI, and Chakra UI. Crafted and engineered by Ahsan Sheikh.",
   "author": "Ahsan Sheikh <ahsansheikhoffice@gmail.com>",
-  "homepage": ".",
+  "homepage": "/",
   "repository": {
     "type": "git",
     "url": "https://github.com/user-ahsan/aura-botanics-luxury-ecommerce.git"
@@ -82,6 +82,7 @@
     ]
   },
   "devDependencies": {
+    "playwright": "^1.64.1",
     "tailwindcss": "^3.2.2"
   }
 }

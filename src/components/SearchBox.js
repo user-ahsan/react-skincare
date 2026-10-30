@@ -454,60 +454,92 @@ const SearchBox = () => {
 
 
   return (
-    <div>
+    <div className="max-w-4xl mx-auto my-12 px-6">
+      <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-gray-100">
+          <div>
+            <h4 className="font-serif text-2xl font-bold text-gray-900">Verified Customer Reflections</h4>
+            <p className="text-xs text-gray-500 mt-1">Filter verified reviews by skin feel and botanical attributes</p>
+          </div>
 
-
-      <div className='flex flex-col gap-7 filterRevHold relative'>
-        <p className='frText text-3xl relative fof'> Filter Reviews </p>
-
-        <input type="text" placeholder="Search" className='bg-black fof searchBox relative text-gray-400 pl-3' onChange={e => setSearch(e.target.value)} />
-      </div>
-
-
-      <div className='searchItemsHold'>{names.filter(val => {
-        if (search === "") {
-          return true;
-        }
-        return val.description.toLowerCase().includes(search.toLowerCase());
-      }).slice(0, 6).map(i => {
-        return (<div key={i.id} className="searchList relative">
-          <p className='font-semibold text-md mb-1 capitalize'> {i.name}</p>
-          <p className='text-md mb-1'>  {i.stars === 4 ? <div className='flex'> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar />  </div> : <div className='flex'> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar />  </div>} </p>
-          <p className=' text-gray-500 font-semibold mb-1 capitalize'> {i.heading} </p>
-            <Highlighter
-              className='fof mb-1 w50rem capitalize mobdesc'
-              highlightClassName="YourHighlightClass highlightWord"
-              searchWords={[search]}
-              autoEscape={true}
-              textToHighlight={i.description}
-            > {i.description}
-            </Highlighter>
-
-          <p className='firstLetterHold rounded-full text-center pt-1 relative mb-1 capitalize'> {i.name.charAt(0)} </p>
-
+          <div className="w-full md:w-auto">
+            <input
+              type="text"
+              placeholder="Search reviews..."
+              value={search}
+              className="w-full md:w-64 px-4 py-2.5 rounded-full border border-gray-300 text-sm focus:outline-none focus:border-[#2b4c3e] shadow-inner"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
         </div>
-        )
-      })} </div>
 
+        {/* Popular Keyword Chips */}
+        <div className="py-6">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500 block mb-3">Popular Keywords</span>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { label: 'Smell', val: smellClick, handler: smellHandler },
+              { label: 'Skin', val: skinClick, handler: skinHandler },
+              { label: 'Fragrance', val: fragClick, handler: fragClickHandler },
+              { label: 'Toner', val: tonerClick, handler: tonerHnadler },
+              { label: 'Hydration', val: hydrClick, handler: hydraHnadler },
+              { label: 'Face', val: faceClick, handler: faceClickHandler },
+              { label: 'Mist', val: mistClick, handler: mistClickHandler },
+              { label: 'Glow', val: glowClick, handler: glowClickHandler },
+              { label: 'Boost', val: boostClick, handler: boostClickHnadler },
+            ].map((kw) => (
+              <button
+                key={kw.label}
+                onClick={kw.handler}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                  search.toLowerCase() === kw.val.toLowerCase()
+                    ? 'bg-[#1a2e26] text-white shadow-sm'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {kw.label}
+              </button>
+            ))}
+          </div>
+        </div>
 
-      <p className='popularKeyWordsText absolute text-2xl fof'> POPULAR KEYWORDS </p>
-
-
-      <div className='keyWordHold w40rem uppercase flex fof flex-wrap gap-11'>
-        <p className='keyWord hover:bg-slate-200' onClick={smellHandler}>SMELL</p>
-        <p className='keyWord hover:bg-slate-200' onClick={skinHandler}> Skin </p>
-        <p className='keyWord hover:bg-slate-200' onClick={fragClickHandler}> Fragrance </p>
-        <p className='keyWord hover:bg-slate-200' onClick={tonerHnadler}> Toner </p>
-        <p className='keyWord hover:bg-slate-200' onClick={hydraHnadler}> Hydration </p>
-        <p className='keyWord hover:bg-slate-200' onClick={faceClickHandler}> Face </p>
-        <p className='keyWord hover:bg-slate-200' onClick={mistClickHandler}> Mist </p>
-        <p className='keyWord hover:bg-slate-200' onClick={glowClickHandler}> Glow </p>
-        <p className='keyWord hover:bg-slate-200' onClick={boostClickHnadler}> Boost </p>
-
+        {/* Review Cards Grid */}
+        <div className="space-y-4 pt-2">
+          {names
+            .filter((val) => {
+              if (search === '') return true;
+              return val.description.toLowerCase().includes(search.toLowerCase());
+            })
+            .slice(0, 5)
+            .map((i) => (
+              <div key={i.id} className="p-5 rounded-2xl bg-[#faf9f6] border border-gray-100 flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#1a2e26] text-[#a3c9a8] flex items-center justify-center font-bold text-sm shrink-0">
+                  {i.name.charAt(0)}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <span className="font-semibold text-sm text-gray-900">{i.name}</span>
+                    <div className="flex text-amber-500 text-xs">
+                      {Array.from({ length: i.stars }).map((_, idx) => (
+                        <AiFillStar key={idx} />
+                      ))}
+                    </div>
+                  </div>
+                  <h5 className="font-serif font-semibold text-sm text-[#2b4c3e] mb-1">{i.heading}</h5>
+                  <Highlighter
+                    className="text-xs text-gray-600 leading-relaxed block"
+                    highlightClassName="bg-amber-100 text-amber-900 font-semibold px-0.5 rounded"
+                    searchWords={[search]}
+                    autoEscape={true}
+                    textToHighlight={i.description}
+                  />
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
-
     </div>
-  )
+  );
 }
 
 export default SearchBox;

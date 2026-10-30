@@ -12,17 +12,14 @@ import { store } from '../productsStore/Store';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../redux-state/CartState';
 import BreadCrumb from './BreadCrumb';
-import "../styles/SinglePage.css";
 import { AiFillStar } from "react-icons/ai";
 import SinglePageFAQ from './SinglePageFAQ';
 import AutoPlayMethods from './SingleAlsoLike';
 import JournalSection from "./JournalSection";
 import SearchBox from './SearchBox';
 import Review1 from './Review1';
-import { FaShippingFast, FaLock, FaHeart, FaRegHeart, FaCheck } from "react-icons/fa";
-import { BsCurrencyDollar } from "react-icons/bs";
+import { FaShippingFast, FaLock, FaHeart, FaRegHeart, FaCheck, FaLeaf, FaUndoAlt, FaShieldAlt } from "react-icons/fa";
 import SPFooter from './SPFooter';
-import { GiCardboardBoxClosed } from "react-icons/gi";
 import { useToast } from '@chakra-ui/react';
 
 const SinglePage = () => {
@@ -85,165 +82,214 @@ const SinglePage = () => {
     const reviews = 384;
 
     return (
-        <div className='singlePageMainParent relative top-36 bg-[#faf9f6] pb-24'>
-            <div className="bgGrey h-14 sinLih border-b border-gray-200">
+        <div className="min-h-screen bg-[#faf9f6] pt-28">
+            {/* Breadcrumb Navigation */}
+            <div className="bg-[#f0ece1]/50 border-b border-[#e5dfd3]">
                 <BreadCrumb name={name} />
             </div>
 
-            {/* Main Product Showcase Picture */}
-            <figure className='singlePageMainPicHold relative'>
-                <img
-                    src={activeImg}
-                    alt={name}
-                    className="w-48 cursor-pointer rounded-2xl object-cover singlePageMainPic shadow-md"
-                />
-            </figure>
+            {/* Product Hero Section */}
+            <section className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    {/* Left Column: Image Gallery (Col 7) */}
+                    <div className="lg:col-span-7 flex flex-col md:flex-row gap-6">
+                        {/* Thumbnails Row on mobile / Column on desktop */}
+                        <div className="order-2 md:order-1 flex md:flex-col gap-3 shrink-0">
+                            {galleryImages.map((imgUrl, idx) => (
+                                <button
+                                    key={idx}
+                                    type="button"
+                                    onClick={() => setActiveImg(imgUrl)}
+                                    className={`w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 transition-all p-1 bg-white shadow-sm ${
+                                        activeImg === imgUrl
+                                            ? 'border-[#2b4c3e] ring-2 ring-[#a3c9a8]/30 scale-105'
+                                            : 'border-transparent hover:border-gray-300 opacity-70 hover:opacity-100'
+                                    }`}
+                                >
+                                    <img
+                                        src={imgUrl}
+                                        alt={`${name} view ${idx + 1}`}
+                                        className="w-full h-full object-cover rounded-xl"
+                                    />
+                                </button>
+                            ))}
+                        </div>
 
-            {/* Dynamic Interactive Gallery Side Thumbnails */}
-            <div className='sideImageHold flex flex-col relative gap-4'>
-                {galleryImages.slice(0, 2).map((imgUrl, idx) => (
-                    <img
-                        key={idx}
-                        src={imgUrl}
-                        alt={`${name} angle ${idx + 1}`}
-                        className={`w-32 h-32 cursor-pointer object-cover rounded-xl border-2 transition-all shadow-sm ${
-                            activeImg === imgUrl ? 'border-[#2b4c3e] scale-105' : 'border-transparent hover:border-gray-300'
-                        }`}
-                        onClick={() => setActiveImg(imgUrl)}
-                    />
-                ))}
-            </div>
+                        {/* Main Featured Showcase Image */}
+                        <div className="order-1 md:order-2 flex-1 bg-white rounded-3xl p-6 border border-[#e8e2d5] shadow-lg flex items-center justify-center min-h-[480px]">
+                            <img
+                                src={activeImg}
+                                alt={name}
+                                className="max-h-[480px] w-auto object-contain rounded-2xl transition-all duration-300 hover:scale-105 cursor-zoom-in"
+                            />
+                        </div>
+                    </div>
 
-            {/* Bottom Gallery Thumbnails */}
-            <div className='bottomImgHold flex flex-row relative gap-4'>
-                {galleryImages.slice(2, 4).map((imgUrl, idx) => (
-                    <img
-                        key={idx}
-                        src={imgUrl}
-                        alt={`${name} thumbnail ${idx + 1}`}
-                        className={`w-32 h-32 cursor-pointer object-cover rounded-xl border-2 transition-all shadow-sm ${
-                            activeImg === imgUrl ? 'border-[#2b4c3e] scale-105' : 'border-transparent hover:border-gray-300'
-                        }`}
-                        onClick={() => setActiveImg(imgUrl)}
-                    />
-                ))}
-            </div>
+                    {/* Right Column: Product Details & Purchase Controls (Col 5) */}
+                    <div className="lg:col-span-5 flex flex-col space-y-6">
+                        {/* Category & Volume Pills */}
+                        <div className="flex items-center gap-3">
+                            <span className="text-[10px] uppercase font-bold tracking-widest text-[#2b4c3e] bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+                                {category || "Botanical Skincare"}
+                            </span>
+                            <span className="text-xs text-gray-500 font-medium">
+                                {volume || "150 ml / 5.1 fl oz"}
+                            </span>
+                        </div>
 
-            {/* Product Title, Volume & Price */}
-            <div className='namePriceSP relative fof flex flex-col gap-2'>
-                <div className="flex items-center gap-2">
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#2b4c3e] bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">
-                        {category || "Botanical Skincare"}
+                        {/* Title & Price */}
+                        <div>
+                            <h1 className="font-serif text-3xl sm:text-4xl text-[#162720] tracking-tight leading-snug font-medium">
+                                {name}
+                            </h1>
+                            <div className="flex items-baseline gap-4 mt-3">
+                                <span className="font-serif text-3xl text-[#162720] font-bold">
+                                    ${price}.00
+                                </span>
+                                <span className="text-xs text-emerald-800 font-semibold bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100 flex items-center gap-1">
+                                    <FaCheck className="text-[9px]" /> In Stock • Ready to Dispatch
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Star Rating Breakdown */}
+                        <div className="flex items-center gap-3 pt-1 border-y border-gray-200 py-3">
+                            <div className="flex text-amber-500 text-sm">
+                                <AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar />
+                            </div>
+                            <span className="font-semibold text-xs text-gray-700">
+                                {reviews} Verified Customer Reviews
+                            </span>
+                            <span className="text-gray-300">•</span>
+                            <span className="text-xs text-emerald-800 font-medium">100% Satisfaction</span>
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                            {descr || "Hand-formulated with cold-pressed certified organic botanicals to deeply nourish, soothe, and protect your living skin barrier. Packaged in biophotonic violet glass."}
+                        </p>
+
+                        {/* Loyalty points prompt */}
+                        <div className="bg-emerald-50/70 rounded-2xl p-3.5 border border-emerald-100/80 flex items-center gap-2.5 text-xs text-emerald-900 font-medium">
+                            <span className="text-emerald-700">✨</span>
+                            <span>Earn <strong>50 Aura Loyalty Points</strong> ($5.00 reward credit) with this purchase.</span>
+                        </div>
+
+                        {/* Quantity & Add to Cart Controls */}
+                        <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                            {/* Quantity Selector */}
+                            <div className="flex items-center justify-between border border-gray-300 rounded-full bg-white px-4 py-3 text-sm font-semibold w-full sm:w-32 shadow-sm">
+                                <button
+                                    type="button"
+                                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                                    className="text-gray-500 hover:text-black font-bold px-1"
+                                >
+                                    −
+                                </button>
+                                <span>{quantity}</span>
+                                <button
+                                    type="button"
+                                    onClick={() => setQuantity(quantity + 1)}
+                                    className="text-gray-500 hover:text-black font-bold px-1"
+                                >
+                                    +
+                                </button>
+                            </div>
+
+                            {/* Add to Bag Button */}
+                            <button
+                                type="button"
+                                onClick={addItemToCartHandler}
+                                className="flex-1 w-full bg-[#1a2e26] hover:bg-[#2b4c3e] text-white py-3.5 px-6 rounded-full font-bold text-xs uppercase tracking-widest transition-all shadow-md hover:shadow-lg active:scale-95 text-center"
+                            >
+                                ADD TO BAG • ${(price * quantity).toFixed(2)}
+                            </button>
+
+                            {/* Wishlist Button */}
+                            <button
+                                type="button"
+                                onClick={handleToggleWishlist}
+                                className="p-3.5 rounded-full border border-gray-300 hover:border-red-400 bg-white text-gray-600 hover:text-red-500 transition-colors shadow-sm shrink-0"
+                                aria-label="Toggle Wishlist"
+                            >
+                                {isWishlisted ? <FaHeart className="text-red-500 text-lg" /> : <FaRegHeart className="text-lg" />}
+                            </button>
+                        </div>
+
+                        {/* Shipping & Returns Quick Guarantee */}
+                        <div className="grid grid-cols-2 gap-3 pt-2 text-[11px] text-gray-600">
+                            <div className="flex items-center gap-2">
+                                <FaShippingFast className="text-[#2b4c3e]" />
+                                <span>Free shipping over $50</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <FaUndoAlt className="text-[#2b4c3e]" />
+                                <span>30-Day Pure Glow Guarantee</span>
+                            </div>
+                        </div>
+
+                        {/* Product Accordion (Formula, Ritual, Ingredients, Values) */}
+                        <div className="pt-4">
+                            <SinglePageFAQ />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* You May Also Like Curated Slider */}
+            <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16 border-t border-gray-200">
+                <div className="text-center mb-10">
+                    <span className="text-xs uppercase tracking-[0.25em] text-[#2b4c3e] font-bold block mb-2">
+                        Complementary Formulations
                     </span>
-                    <span className="text-xs text-gray-500 font-medium">
-                        {volume || "150 ml / 5.1 fl oz"}
-                    </span>
+                    <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-medium">
+                        You May Also Like
+                    </h2>
                 </div>
-                <h1 className='font-serif font-bold text-3xl text-gray-900'> {name} </h1>
-                <p className='text-2xl font-serif text-[#162720] font-bold'> ${price}.00 </p>
-                <p className="text-xs text-gray-600 max-w-sm leading-relaxed mt-1">
-                    {descr || "Hand-formulated with cold-pressed certified organic botanicals to deeply nourish, soothe, and protect your living skin barrier."}
-                </p>
-                <div className="flex items-center gap-2 text-xs text-emerald-800 font-semibold mt-1">
-                    <FaCheck className="text-[10px] text-emerald-600" /> In Stock • Ships within 24h in Biophotonic Glass
+                <div className="overflow-hidden">
+                    <AutoPlayMethods />
                 </div>
-            </div>
+            </section>
 
-            <p className='relative singleLinetop text-gray-200'>
-                ___________________________________________________________________
-            </p>
+            {/* Customer Reviews & Breakdown */}
+            <section className="bg-[#f4f1ea]/60 py-16 border-y border-[#e5dfd3]">
+                <Review1 starCalc={numOfRev} rev={reviews} />
+                <SearchBox />
+            </section>
 
-            {/* Star Rating Breakdown */}
-            <div className='relative gap-2 flex starHold items-center'>
-                <div className='flex text-amber-500 text-sm'>
-                    <AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar />
-                </div>
-                <p className='font-semibold text-xs text-gray-600 ml-2'>
-                    {reviews} Verified Customer Reviews
-                </p>
-            </div>
-
-            {/* Loyalty Prompt */}
-            <p className='font-semibold text-xs tracking-wider uppercase relative loyalty text-emerald-900'>
-                ✨ Earn 50 Aura Botanics Loyalty Points with this order
-            </p>
-
-            {/* Add to Cart & Wishlist Controls */}
-            <div className='spBtnHold relative flex items-center gap-4'>
-                {/* Quantity Selector */}
-                <div className="flex items-center border border-gray-300 rounded-full bg-white px-3 py-2 text-sm font-semibold">
-                    <button
-                        type="button"
-                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        className="px-2 text-gray-500 hover:text-black"
-                    >
-                        −
-                    </button>
-                    <span className="px-3">{quantity}</span>
-                    <button
-                        type="button"
-                        onClick={() => setQuantity(quantity + 1)}
-                        className="px-2 text-gray-500 hover:text-black"
-                    >
-                        +
-                    </button>
-                </div>
-
-                <button
-                    className='spAddTOCart bg-[#1a2e26] hover:bg-[#2b4c3e] text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all shadow-md hover:shadow-lg'
-                    onClick={addItemToCartHandler}
-                >
-                    ADD TO BAG • ${(price * quantity).toFixed(2)}
-                </button>
-
-                {/* Wishlist Button */}
-                <button
-                    onClick={handleToggleWishlist}
-                    className="p-3.5 rounded-full border border-gray-300 hover:border-red-400 bg-white text-gray-600 hover:text-red-500 transition-colors shadow-sm"
-                    aria-label="Wishlist"
-                >
-                    {isWishlisted ? <FaHeart className="text-red-500 text-base" /> : <FaRegHeart className="text-base" />}
-                </button>
-            </div>
-
-            {/* Product Accordion */}
-            <div className="relative mt-8 max-w-xl left-[48rem]">
-                <SinglePageFAQ />
-            </div>
-
-            <p className='fof text-4xl spText absolute text-center font-serif text-gray-900'>
-                YOU MAY ALSO LIKE
-            </p>
-            <AutoPlayMethods />
-
-            {/* Reviews Section */}
-            <Review1 starCalc={numOfRev} rev={reviews} />
-
-            {/* Search Box / Keyword Filtered Reviews */}
-            <SearchBox />
-
-            <div className='jsParent'>
+            {/* Journal Editorial Preview */}
+            <section className="py-16">
                 <JournalSection />
-            </div>
+            </section>
 
-            {/* Shipping & Trust Icons */}
-            <div className='footerFeatures2 flex flex-row absolute text-[#2b4c3e]'>
-                <FaShippingFast className='w-16 h-20 sv' />
-                <FaLock className='w-12 h-16 sv2' />
-                <BsCurrencyDollar className='w-16 h-20 sv' />
-                <GiCardboardBoxClosed className='w-16 h-20 sv' />
-            </div>
+            {/* Trust & Craftsmanship Icons */}
+            <section className="max-w-7xl mx-auto px-6 lg:px-12 py-12 border-t border-gray-200">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div className="flex flex-col items-center p-4">
+                        <FaShippingFast className="text-3xl text-[#2b4c3e] mb-2" />
+                        <h4 className="font-serif font-bold text-sm text-gray-900 mb-1">Carbon-Free 2-Day Delivery</h4>
+                        <p className="text-[11px] text-gray-500">Expedited climate-neutral dispatch</p>
+                    </div>
+                    <div className="flex flex-col items-center p-4">
+                        <FaLock className="text-3xl text-[#2b4c3e] mb-2" />
+                        <h4 className="font-serif font-bold text-sm text-gray-900 mb-1">256-Bit Secure Checkout</h4>
+                        <p className="text-[11px] text-gray-500">Encrypted payment architecture</p>
+                    </div>
+                    <div className="flex flex-col items-center p-4">
+                        <FaShieldAlt className="text-3xl text-[#2b4c3e] mb-2" />
+                        <h4 className="font-serif font-bold text-sm text-gray-900 mb-1">30-Day Pure Glow Guarantee</h4>
+                        <p className="text-[11px] text-gray-500">Hassle-free botanical returns</p>
+                    </div>
+                    <div className="flex flex-col items-center p-4">
+                        <FaLeaf className="text-3xl text-[#2b4c3e] mb-2" />
+                        <h4 className="font-serif font-bold text-sm text-gray-900 mb-1">Biophotonic Violet Glass</h4>
+                        <p className="text-[11px] text-gray-500">100% recyclable solar protection</p>
+                    </div>
+                </div>
+            </section>
 
-            <div className='footerFeatures2TextHold fof flex flex-row absolute uppercase text-xs text-gray-600'>
-                <p> Carbon-Free 2-Day Delivery </p>
-                <p> 256-bit Secure Checkout </p>
-                <p> 30-Day Money Back </p>
-                <p className='ml'> 100% Recyclable Glass </p>
-            </div>
-
-            <div className='spfooterHold absolute w-full'>
-                <SPFooter />
-            </div>
+            {/* Footer */}
+            <SPFooter />
         </div>
     );
 };
